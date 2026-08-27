@@ -157,7 +157,7 @@ function Index() {
               Selected Works
             </h2>
             <span className="font-mono text-[10px] text-muted-foreground uppercase pb-1">
-              06 Records Total
+              03 Records Total
             </span>
           </div>
 
