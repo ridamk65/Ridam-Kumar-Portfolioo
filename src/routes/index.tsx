@@ -17,20 +17,20 @@ export const Route = createFileRoute("/")({
 const projects = [
   {
     id: "01",
-    title: "MetricGuard",
-    year: "2024",
+    title: "GiftChain",
+    year: "Oct 2025",
     description:
-      "A tamper-evident observability layer for distributed metrics. Anchors metric hashes to a Hyperledger Fabric ledger at intervals so post-incident tampering becomes mathematically detectable, and uses Isolation Forest to surface anomalies without labeled attack data.",
-    role: "Blockchain & ML Engineer",
+      "A decentralized donation-tracking application that records donation transactions transparently on the blockchain.",
+    role: "Smart Contract & Frontend Developer",
     outcome:
-      "Built a defense-in-depth pipeline that pairs unsupervised anomaly detection with blockchain-anchored evidence for distributed Prometheus/Thanos setups.",
-    tags: ["Thanos", "Prometheus", "Hyperledger Fabric", "Isolation Forest", "Anomaly Detection", "Python"],
+      "Developed a working DApp prototype demonstrating transparent and tamper-resistant donation tracking.",
+    tags: ["Solidity", "Ethereum", "Polygon", "React", "Vite", "Ethers.js", "Web3.js", "MetaMask", "Hardhat"],
     featured: true,
   },
   {
     id: "02",
     title: "VEXIS",
-    year: "2024",
+    year: "Aug 2026",
     description:
       "An explainable misbehavior-detection system for Vehicular Ad-hoc Networks (VANETs). ExBDT combines Binary Trie routing with CART/C4.5 decision trees, while SHAP/TreeSHAP explains why a node is flagged.",
     role: "Research & Systems Engineer",
@@ -40,17 +40,6 @@ const projects = [
   },
   {
     id: "03",
-    title: "The Lockout",
-    year: "2024",
-    description:
-      "A root-cause analysis engine for company-wide SSO outages. CART/C4.5 plus SHAP ranks which signals contributed most to the failure, while a Hyperledger-style audit trail anchors the incident timeline.",
-    role: "ML & Backend Engineer",
-    outcome:
-      "Produces defensible, provable postmortems that move beyond 'the auth service is down' to 'here is exactly what caused it and the evidence that proves it.'",
-    tags: ["SSO", "Root Cause Analysis", "CART/C4.5", "SHAP", "Hyperledger", "Audit Trail"],
-  },
-  {
-    id: "04",
     title: "Friday",
     year: "2024",
     description:
@@ -60,35 +49,13 @@ const projects = [
       "Explored the build-vs-buy trade-off in real-time voice infrastructure by comparing a custom multi-agent stack to an off-the-shelf LiveKit/Gemini pipeline.",
     tags: ["LangChain", "Multi-Agent", "Persistent Memory", "LiveKit", "Gemini", "Voice AI"],
   },
-  {
-    id: "05",
-    title: "GiftChain",
-    year: "2024",
-    description:
-      "A decentralized donation-tracking application that records donation transactions transparently on the blockchain.",
-    role: "Smart Contract & Frontend Developer",
-    outcome:
-      "Developed a working DApp prototype demonstrating transparent and tamper-resistant donation tracking.",
-    tags: ["Solidity", "Ethereum", "Polygon", "React", "Vite", "Ethers.js", "Web3.js", "MetaMask", "Hardhat"],
-  },
-  {
-    id: "06",
-    title: "PropGrowthX",
-    year: "2024",
-    description:
-      "A property-focused web platform with listings and image management backed by cloud storage and a robust database layer.",
-    role: "Full-Stack Engineer",
-    outcome:
-      "Implemented cloud-based property image storage and integrated property data and images into the web application.",
-    tags: ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "Supabase Storage"],
-  },
 ];
 
 const skillGroups = [
   {
     number: "01",
     title: "Blockchain & Trust",
-    items: ["Solidity", "Ethereum / EVM", "Hyperledger Fabric", "Hardhat", "OpenZeppelin", "IPFS", "MetaMask", "Polygon"],
+    items: ["Solidity", "Ethereum / EVM", "Hardhat", "OpenZeppelin", "IPFS", "MetaMask", "Polygon"],
   },
   {
     number: "02",
@@ -98,7 +65,7 @@ const skillGroups = [
   {
     number: "03",
     title: "ML & Data",
-    items: ["Isolation Forest", "SHAP / TreeSHAP", "CART / C4.5", "LangChain", "Multi-Agent Systems", "PostgreSQL", "Supabase"],
+    items: ["SHAP / TreeSHAP", "CART / C4.5", "LangChain", "Multi-Agent Systems", "PostgreSQL", "Supabase"],
   },
 ];
 
@@ -176,10 +143,10 @@ function Index() {
             About
           </h2>
           <p className="max-w-3xl text-2xl md:text-3xl font-display font-medium tracking-tight leading-snug text-pretty">
-            I build systems where explainable ML meets tamper-evident infrastructure. My work
-            pairs anomaly detection and decision-tree explainability with blockchain-anchored
-            evidence — producing provable, auditable results across observability, vehicular
-            networks, incident response, and AI-agent architecture.
+            I build systems that sit at the intersection of decentralized trust, explainable AI,
+            and intelligent interfaces. From transparent donation tracking on-chain to
+            explainable misbehavior detection in vehicular networks and persistent-memory voice
+            agents, I turn research-backed ideas into working products.
           </p>
         </section>
 
@@ -190,7 +157,7 @@ function Index() {
               Selected Works
             </h2>
             <span className="font-mono text-[10px] text-muted-foreground uppercase pb-1">
-              06 Records Total
+              03 Records Total
             </span>
           </div>
 
