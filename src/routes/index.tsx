@@ -59,8 +59,8 @@ const skillGroups = [
   },
   {
     number: "02",
-    title: "Full-Stack & Systems",
-    items: ["React", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "Ethers.js", "Web3.js"],
+    title: "Cloud & Systems",
+    items: ["AWS (learning)", "React", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "Ethers.js", "Web3.js"],
   },
   {
     number: "03",
