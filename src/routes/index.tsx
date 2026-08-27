@@ -144,9 +144,10 @@ function Index() {
           </h2>
           <p className="max-w-3xl text-2xl md:text-3xl font-display font-medium tracking-tight leading-snug text-pretty">
             I build systems that sit at the intersection of decentralized trust, explainable AI,
-            and intelligent interfaces. From transparent donation tracking on-chain to
+            and cloud-native infrastructure. From transparent donation tracking on-chain to
             explainable misbehavior detection in vehicular networks and persistent-memory voice
-            agents, I turn research-backed ideas into working products.
+            agents, I turn research-backed ideas into working products while deepening my AWS
+            architecture practice.
           </p>
         </section>
 
