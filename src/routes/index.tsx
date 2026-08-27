@@ -3,10 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ridam Kumar | Blockchain & AWS Architect (learning)" },
-      { name: "description", content: "Portfolio of Ridam Kumar — blockchain developer and AWS architect (learning) building secure smart contracts, decentralized applications, and cloud-native systems." },
-      { property: "og:title", content: "Ridam Kumar | Blockchain & AWS Architect (learning)" },
-      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain developer and AWS architect (learning) building secure smart contracts, decentralized applications, and cloud-native systems." },
+      { title: "Ridam Kumar | Blockchain & AWS Architect Developer" },
+      { name: "description", content: "Portfolio of Ridam Kumar — blockchain and AWS architect developer building secure smart contracts, decentralized applications, and scalable cloud-native systems." },
+      { property: "og:title", content: "Ridam Kumar | Blockchain & AWS Architect Developer" },
+      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain and AWS architect developer building secure smart contracts, decentralized applications, and scalable cloud-native systems." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -98,7 +98,7 @@ function Index() {
           <div className="absolute -top-24 -left-24 size-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
           <div className="relative">
             <p className="font-mono text-xs text-primary mb-4 tracking-[0.2em] uppercase">
-              Blockchain & AWS Architect (learning)
+              Blockchain & AWS Architect Developer
             </p>
             <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter leading-[0.85] mb-8">
               RIDAM <br /> KUMAR
@@ -269,7 +269,7 @@ function Index() {
                 Initialize collaboration.
               </h2>
               <p className="text-muted-foreground max-w-md">
-                Open to blockchain engineering, full-stack roles, and ambitious product builds.
+                Open to blockchain engineering, AWS architecture, and ambitious product builds.
                 Let’s talk.
               </p>
             </div>
