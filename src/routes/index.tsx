@@ -3,10 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ridam Kumar | Blockchain & Full-Stack Engineer" },
-      { name: "description", content: "Portfolio of Ridam Kumar — blockchain developer and full-stack engineer building secure smart contracts, decentralized applications, and scalable web platforms." },
-      { property: "og:title", content: "Ridam Kumar | Blockchain & Full-Stack Engineer" },
-      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain developer and full-stack engineer building secure smart contracts, decentralized applications, and scalable web platforms." },
+      { title: "Ridam Kumar | Blockchain & AWS Architect (learning)" },
+      { name: "description", content: "Portfolio of Ridam Kumar — blockchain developer and AWS architect (learning) building secure smart contracts, decentralized applications, and cloud-native systems." },
+      { property: "og:title", content: "Ridam Kumar | Blockchain & AWS Architect (learning)" },
+      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain developer and AWS architect (learning) building secure smart contracts, decentralized applications, and cloud-native systems." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -17,6 +17,17 @@ export const Route = createFileRoute("/")({
 const projects = [
   {
     id: "01",
+    title: "Friday",
+    year: "2024",
+    description:
+      "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
+    role: "AI Systems Engineer",
+    outcome:
+      "Explored the build-vs-buy trade-off in real-time voice infrastructure by comparing a custom multi-agent stack to an off-the-shelf LiveKit/Gemini pipeline.",
+    tags: ["LangChain", "Multi-Agent", "Persistent Memory", "LiveKit", "Gemini", "Voice AI"],
+  },
+  {
+    id: "02",
     title: "GiftChain",
     year: "Oct 2025",
     description:
@@ -28,7 +39,7 @@ const projects = [
     featured: true,
   },
   {
-    id: "02",
+    id: "03",
     title: "VEXIS",
     year: "Aug 2026",
     description:
@@ -37,17 +48,6 @@ const projects = [
     outcome:
       "IEEE-submitted work evaluated on VeReMi Extension and CICIDS 2017, demonstrating explainable intrusion detection for healthcare-adjacent vehicular infrastructure.",
     tags: ["VANET", "ExBDT", "CART/C4.5", "SHAP", "TreeSHAP", "VeReMi", "CICIDS 2017"],
-  },
-  {
-    id: "03",
-    title: "Friday",
-    year: "2024",
-    description:
-      "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
-    role: "AI Systems Engineer",
-    outcome:
-      "Explored the build-vs-buy trade-off in real-time voice infrastructure by comparing a custom multi-agent stack to an off-the-shelf LiveKit/Gemini pipeline.",
-    tags: ["LangChain", "Multi-Agent", "Persistent Memory", "LiveKit", "Gemini", "Voice AI"],
   },
 ];
 
@@ -59,8 +59,8 @@ const skillGroups = [
   },
   {
     number: "02",
-    title: "Full-Stack & Systems",
-    items: ["React", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "Ethers.js", "Web3.js"],
+    title: "Cloud & Systems",
+    items: ["AWS (learning)", "React", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "Ethers.js", "Web3.js"],
   },
   {
     number: "03",
@@ -98,14 +98,14 @@ function Index() {
           <div className="absolute -top-24 -left-24 size-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
           <div className="relative">
             <p className="font-mono text-xs text-primary mb-4 tracking-[0.2em] uppercase">
-              Blockchain & Full-Stack Engineer
+              Blockchain & AWS Architect (learning)
             </p>
             <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter leading-[0.85] mb-8">
               RIDAM <br /> KUMAR
             </h1>
             <p className="max-w-xl text-lg text-muted-foreground font-light leading-relaxed text-pretty">
-              Building secure, decentralized systems and polished full-stack interfaces. From
-              audited smart contracts to scalable web platforms, I turn complex ideas into
+              Building secure, decentralized systems and cloud-native architectures. From audited
+              smart contracts to AWS-backed infrastructure, I turn complex ideas into
               production-ready products.
             </p>
             <div className="mt-12 flex gap-6 font-mono text-xs uppercase tracking-widest">
@@ -144,9 +144,10 @@ function Index() {
           </h2>
           <p className="max-w-3xl text-2xl md:text-3xl font-display font-medium tracking-tight leading-snug text-pretty">
             I build systems that sit at the intersection of decentralized trust, explainable AI,
-            and intelligent interfaces. From transparent donation tracking on-chain to
+            and cloud-native infrastructure. From transparent donation tracking on-chain to
             explainable misbehavior detection in vehicular networks and persistent-memory voice
-            agents, I turn research-backed ideas into working products.
+            agents, I turn research-backed ideas into working products while deepening my AWS
+            architecture practice.
           </p>
         </section>
 
