@@ -98,14 +98,14 @@ function Index() {
           <div className="absolute -top-24 -left-24 size-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
           <div className="relative">
             <p className="font-mono text-xs text-primary mb-4 tracking-[0.2em] uppercase">
-              Blockchain & Full-Stack Engineer
+              Blockchain & AWS Architect (learning)
             </p>
             <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter leading-[0.85] mb-8">
               RIDAM <br /> KUMAR
             </h1>
             <p className="max-w-xl text-lg text-muted-foreground font-light leading-relaxed text-pretty">
-              Building secure, decentralized systems and polished full-stack interfaces. From
-              audited smart contracts to scalable web platforms, I turn complex ideas into
+              Building secure, decentralized systems and cloud-native architectures. From audited
+              smart contracts to AWS-backed infrastructure, I turn complex ideas into
               production-ready products.
             </p>
             <div className="mt-12 flex gap-6 font-mono text-xs uppercase tracking-widest">
