@@ -98,7 +98,7 @@ function Index() {
           <div className="absolute -top-24 -left-24 size-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
           <div className="relative">
             <p className="font-mono text-xs text-primary mb-4 tracking-[0.2em] uppercase">
-              Blockchain & AWS Architect (learning)
+              Blockchain & AWS Architect Developer
             </p>
             <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter leading-[0.85] mb-8">
               RIDAM <br /> KUMAR
