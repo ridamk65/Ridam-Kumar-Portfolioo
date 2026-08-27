@@ -53,19 +53,20 @@ const projects = [
 
 const skillGroups = [
   {
-    number: "01",
-    title: "Blockchain & Trust",
-    items: ["Solidity", "Ethereum / EVM", "Hardhat", "OpenZeppelin", "IPFS", "MetaMask", "Polygon"],
+    title: "Languages",
+    items: ["Java", "Python", "JavaScript", "Solidity"],
   },
   {
-    number: "02",
-    title: "Cloud & Systems",
-    items: ["AWS (learning)", "React", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "Ethers.js", "Web3.js"],
+    title: "Blockchain",
+    items: ["Ethereum", "Hyperledger Fabric", "Web3", "Smart Contracts"],
   },
   {
-    number: "03",
-    title: "ML & Data",
-    items: ["SHAP / TreeSHAP", "CART / C4.5", "LangChain", "Multi-Agent Systems", "PostgreSQL", "Supabase"],
+    title: "ML / Explainability",
+    items: ["Isolation Forest", "CART / C4.5", "SHAP / TreeSHAP"],
+  },
+  {
+    title: "Systems & Tools",
+    items: ["Thanos", "LangChain", "GPT-4", "Git", "SQL"],
   },
 ];
 
