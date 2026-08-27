@@ -17,6 +17,17 @@ export const Route = createFileRoute("/")({
 const projects = [
   {
     id: "01",
+    title: "Friday",
+    year: "2024",
+    description:
+      "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
+    role: "AI Systems Engineer",
+    outcome:
+      "Explored the build-vs-buy trade-off in real-time voice infrastructure by comparing a custom multi-agent stack to an off-the-shelf LiveKit/Gemini pipeline.",
+    tags: ["LangChain", "Multi-Agent", "Persistent Memory", "LiveKit", "Gemini", "Voice AI"],
+  },
+  {
+    id: "02",
     title: "GiftChain",
     year: "Oct 2025",
     description:
@@ -28,7 +39,7 @@ const projects = [
     featured: true,
   },
   {
-    id: "02",
+    id: "03",
     title: "VEXIS",
     year: "Aug 2026",
     description:
@@ -37,17 +48,6 @@ const projects = [
     outcome:
       "IEEE-submitted work evaluated on VeReMi Extension and CICIDS 2017, demonstrating explainable intrusion detection for healthcare-adjacent vehicular infrastructure.",
     tags: ["VANET", "ExBDT", "CART/C4.5", "SHAP", "TreeSHAP", "VeReMi", "CICIDS 2017"],
-  },
-  {
-    id: "03",
-    title: "Friday",
-    year: "2024",
-    description:
-      "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
-    role: "AI Systems Engineer",
-    outcome:
-      "Explored the build-vs-buy trade-off in real-time voice infrastructure by comparing a custom multi-agent stack to an off-the-shelf LiveKit/Gemini pipeline.",
-    tags: ["LangChain", "Multi-Agent", "Persistent Memory", "LiveKit", "Gemini", "Voice AI"],
   },
 ];
 
