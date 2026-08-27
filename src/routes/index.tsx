@@ -53,19 +53,20 @@ const projects = [
 
 const skillGroups = [
   {
-    number: "01",
-    title: "Blockchain & Trust",
-    items: ["Solidity", "Ethereum / EVM", "Hardhat", "OpenZeppelin", "IPFS", "MetaMask", "Polygon"],
+    title: "Languages",
+    items: ["Java", "Python", "JavaScript", "Solidity"],
   },
   {
-    number: "02",
-    title: "Cloud & Systems",
-    items: ["AWS (learning)", "React", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "Ethers.js", "Web3.js"],
+    title: "Blockchain",
+    items: ["Ethereum", "Hyperledger Fabric", "Web3", "Smart Contracts"],
   },
   {
-    number: "03",
-    title: "ML & Data",
-    items: ["SHAP / TreeSHAP", "CART / C4.5", "LangChain", "Multi-Agent Systems", "PostgreSQL", "Supabase"],
+    title: "ML / Explainability",
+    items: ["Isolation Forest", "CART / C4.5", "SHAP / TreeSHAP"],
+  },
+  {
+    title: "Systems & Tools",
+    items: ["Thanos", "LangChain", "GPT-4", "Git", "SQL"],
   },
 ];
 
@@ -241,21 +242,24 @@ function Index() {
         {/* Skills Section */}
         <section id="skills" className="mb-32 animate-reveal">
           <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
-            Technical Arsenal
+            Stack Readout
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {skillGroups.map((group) => (
-              <div key={group.number}>
+              <div key={group.title} className="bg-background p-6 md:p-8">
                 <h4 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6">
-                  {group.number} / {group.title}
+                  {group.title}
                 </h4>
-                <ul className="space-y-3">
+                <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm font-light">
-                      {item} <span className="text-border">/</span>
-                    </li>
+                    <span
+                      key={item}
+                      className="text-[11px] font-mono py-1.5 px-3 border border-border text-foreground/90"
+                    >
+                      {item}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -263,25 +267,33 @@ function Index() {
 
         {/* Contact */}
         <section id="contact" className="py-24 border-t border-border animate-reveal">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-4xl font-display font-bold tracking-tight mb-4 text-balance">
-                Initialize collaboration.
+              <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-6">
+                Reach Out
               </h2>
-              <p className="text-muted-foreground max-w-md">
-                Open to blockchain engineering, AWS architecture, and ambitious product builds.
-                Let’s talk.
+              <p className="font-mono text-sm text-muted-foreground mb-2">$ ~/contact --ridam</p>
+              <p className="text-muted-foreground max-w-md mb-8">
+                open to: software engineering & Web3 / blockchain roles
               </p>
+              <a
+                href="mailto:[add your email]"
+                className="font-mono text-sm text-foreground/80 hover:text-primary transition-colors"
+              >
+                email: [add your email]
+              </a>
             </div>
-            <a
-              href="mailto:ridam@example.com"
-              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.2em] transition-all hover:pr-10"
-            >
-              Reach Out
-              <span className="absolute right-4 transition-all opacity-0 group-hover:opacity-100">
-                →
-              </span>
-            </a>
+            <div className="md:text-right">
+              <a
+                href="mailto:[add your email]"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.2em] transition-all hover:pr-10"
+              >
+                Initialize
+                <span className="absolute right-4 transition-all opacity-0 group-hover:opacity-100">
+                  →
+                </span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
