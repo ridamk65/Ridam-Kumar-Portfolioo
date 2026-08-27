@@ -17,28 +17,51 @@ export const Route = createFileRoute("/")({
 const projects = [
   {
     id: "01",
-    title: "EduVault-X",
+    title: "MetricGuard",
     year: "2024",
     description:
-      "A secure examination platform combining biometric authentication with blockchain to protect exam access, records, and question-paper storage.",
-    role: "Blockchain & Backend Lead",
+      "A tamper-evident observability layer for distributed metrics. Anchors metric hashes to a Hyperledger Fabric ledger at intervals so post-incident tampering becomes mathematically detectable, and uses Isolation Forest to surface anomalies without labeled attack data.",
+    role: "Blockchain & ML Engineer",
     outcome:
-      "Developed the backend and deployed the smart contract to the Sepolia testnet during an intensive development sprint.",
-    tags: ["Solidity", "Ethereum", "Sepolia", "Hardhat", "Node.js", "Express.js", "SQLite", "React"],
+      "Built a defense-in-depth pipeline that pairs unsupervised anomaly detection with blockchain-anchored evidence for distributed Prometheus/Thanos setups.",
+    tags: ["Thanos", "Prometheus", "Hyperledger Fabric", "Isolation Forest", "Anomaly Detection", "Python"],
+    featured: true,
   },
   {
     id: "02",
-    title: "SkillCertChain",
+    title: "VEXIS",
     year: "2024",
     description:
-      "A decentralized platform for issuing and verifying educational/professional certificates using blockchain and IPFS, reducing certificate forgery.",
-    role: "Smart Contract & Frontend Engineer",
+      "An explainable misbehavior-detection system for Vehicular Ad-hoc Networks (VANETs). ExBDT combines Binary Trie routing with CART/C4.5 decision trees, while SHAP/TreeSHAP explains why a node is flagged.",
+    role: "Research & Systems Engineer",
     outcome:
-      "Built a functional decentralized certificate-verification prototype with blockchain-based verification and IPFS storage.",
-    tags: ["Solidity", "Ethereum", "Hardhat", "React", "Ethers.js", "IPFS", "MetaMask", "OpenZeppelin"],
+      "IEEE-submitted work evaluated on VeReMi Extension and CICIDS 2017, demonstrating explainable intrusion detection for healthcare-adjacent vehicular infrastructure.",
+    tags: ["VANET", "ExBDT", "CART/C4.5", "SHAP", "TreeSHAP", "VeReMi", "CICIDS 2017"],
   },
   {
     id: "03",
+    title: "The Lockout",
+    year: "2024",
+    description:
+      "A root-cause analysis engine for company-wide SSO outages. CART/C4.5 plus SHAP ranks which signals contributed most to the failure, while a Hyperledger-style audit trail anchors the incident timeline.",
+    role: "ML & Backend Engineer",
+    outcome:
+      "Produces defensible, provable postmortems that move beyond 'the auth service is down' to 'here is exactly what caused it and the evidence that proves it.'",
+    tags: ["SSO", "Root Cause Analysis", "CART/C4.5", "SHAP", "Hyperledger", "Audit Trail"],
+  },
+  {
+    id: "04",
+    title: "Friday",
+    year: "2024",
+    description:
+      "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
+    role: "AI Systems Engineer",
+    outcome:
+      "Explored the build-vs-buy trade-off in real-time voice infrastructure by comparing a custom multi-agent stack to an off-the-shelf LiveKit/Gemini pipeline.",
+    tags: ["LangChain", "Multi-Agent", "Persistent Memory", "LiveKit", "Gemini", "Voice AI"],
+  },
+  {
+    id: "05",
     title: "GiftChain",
     year: "2024",
     description:
@@ -49,18 +72,7 @@ const projects = [
     tags: ["Solidity", "Ethereum", "Polygon", "React", "Vite", "Ethers.js", "Web3.js", "MetaMask", "Hardhat"],
   },
   {
-    id: "04",
-    title: "SafeStreets",
-    year: "2024",
-    description:
-      "An AI-powered women’s safety companion providing intelligent route recommendations, SOS activation, live location sharing, predictive alerts, and secure evidence storage.",
-    role: "Blockchain & Architecture Contributor",
-    outcome:
-      "Developed as a hackathon project using AI, real-time location technology, and blockchain to improve personal safety.",
-    tags: ["AI/ML", "Blockchain", "Location Services", "Real-Time Systems", "Mobile/Web"],
-  },
-  {
-    id: "05",
+    id: "06",
     title: "PropGrowthX",
     year: "2024",
     description:
@@ -69,25 +81,24 @@ const projects = [
     outcome:
       "Implemented cloud-based property image storage and integrated property data and images into the web application.",
     tags: ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "Supabase Storage"],
-    featured: true,
   },
 ];
 
 const skillGroups = [
   {
     number: "01",
-    title: "Blockchain",
-    items: ["Solidity", "Ethereum / EVM", "Hardhat", "OpenZeppelin", "IPFS", "MetaMask", "Polygon"],
+    title: "Blockchain & Trust",
+    items: ["Solidity", "Ethereum / EVM", "Hyperledger Fabric", "Hardhat", "OpenZeppelin", "IPFS", "MetaMask", "Polygon"],
   },
   {
     number: "02",
-    title: "Full-Stack",
+    title: "Full-Stack & Systems",
     items: ["React", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "Ethers.js", "Web3.js"],
   },
   {
     number: "03",
-    title: "Data & Cloud",
-    items: ["PostgreSQL", "SQLite", "Supabase", "Supabase Storage", "AI/ML", "Real-Time Systems"],
+    title: "ML & Data",
+    items: ["Isolation Forest", "SHAP / TreeSHAP", "CART / C4.5", "LangChain", "Multi-Agent Systems", "PostgreSQL", "Supabase"],
   },
 ];
 
@@ -165,9 +176,10 @@ function Index() {
             About
           </h2>
           <p className="max-w-3xl text-2xl md:text-3xl font-display font-medium tracking-tight leading-snug text-pretty">
-            I specialize in blockchain integration, smart-contract development, and full-stack
-            engineering. My work spans secure exam systems, certificate verification, donation
-            tracking, AI-powered safety tools, and cloud-backed property platforms.
+            I build systems where explainable ML meets tamper-evident infrastructure. My work
+            pairs anomaly detection and decision-tree explainability with blockchain-anchored
+            evidence — producing provable, auditable results across observability, vehicular
+            networks, incident response, and AI-agent architecture.
           </p>
         </section>
 
@@ -178,7 +190,7 @@ function Index() {
               Selected Works
             </h2>
             <span className="font-mono text-[10px] text-muted-foreground uppercase pb-1">
-              05 Records Total
+              06 Records Total
             </span>
           </div>
 
