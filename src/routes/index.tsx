@@ -143,10 +143,10 @@ function Index() {
             About
           </h2>
           <p className="max-w-3xl text-2xl md:text-3xl font-display font-medium tracking-tight leading-snug text-pretty">
-            I build systems where explainable ML meets tamper-evident infrastructure. My work
-            pairs anomaly detection and decision-tree explainability with blockchain-anchored
-            evidence — producing provable, auditable results across observability, vehicular
-            networks, incident response, and AI-agent architecture.
+            I build systems that sit at the intersection of decentralized trust, explainable AI,
+            and intelligent interfaces. From transparent donation tracking on-chain to
+            explainable misbehavior detection in vehicular networks and persistent-memory voice
+            agents, I turn research-backed ideas into working products.
           </p>
         </section>
 
