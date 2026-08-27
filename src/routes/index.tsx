@@ -3,10 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ridam Kumar | Blockchain & Full-Stack Engineer" },
-      { name: "description", content: "Portfolio of Ridam Kumar — blockchain developer and full-stack engineer building secure smart contracts, decentralized applications, and scalable web platforms." },
-      { property: "og:title", content: "Ridam Kumar | Blockchain & Full-Stack Engineer" },
-      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain developer and full-stack engineer building secure smart contracts, decentralized applications, and scalable web platforms." },
+      { title: "Ridam Kumar | Blockchain & AWS Architect (learning)" },
+      { name: "description", content: "Portfolio of Ridam Kumar — blockchain developer and AWS architect (learning) building secure smart contracts, decentralized applications, and cloud-native systems." },
+      { property: "og:title", content: "Ridam Kumar | Blockchain & AWS Architect (learning)" },
+      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain developer and AWS architect (learning) building secure smart contracts, decentralized applications, and cloud-native systems." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
