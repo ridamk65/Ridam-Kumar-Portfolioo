@@ -269,7 +269,7 @@ function Index() {
                 Initialize collaboration.
               </h2>
               <p className="text-muted-foreground max-w-md">
-                Open to blockchain engineering, full-stack roles, and ambitious product builds.
+                Open to blockchain engineering, AWS architecture, and ambitious product builds.
                 Let’s talk.
               </p>
             </div>
