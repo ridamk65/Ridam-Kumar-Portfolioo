@@ -210,6 +210,55 @@ function Index() {
           </p>
         </section>
 
+        {/* Services */}
+        <section id="services" className="mb-32 animate-reveal">
+          <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+            Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="group bg-background p-8 transition-colors hover:bg-secondary/40"
+              >
+                <span className="font-mono text-[10px] text-primary tracking-[0.2em]">
+                  {service.id}
+                </span>
+                <h3 className="mt-6 text-xl font-display font-semibold group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Experience Timeline */}
+        <section id="experience" className="mb-32 animate-reveal">
+          <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+            Experience
+          </h2>
+          <ol className="relative border-l border-border pl-8 space-y-12">
+            {timeline.map((entry) => (
+              <li key={entry.title} className="relative">
+                <span className="absolute -left-[2.15rem] top-1.5 size-3 rounded-full bg-primary ring-4 ring-background" />
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                  {entry.period}
+                </p>
+                <h3 className="mt-2 text-xl font-display font-semibold">{entry.title}</h3>
+                <p className="text-sm font-mono text-primary/80">{entry.org}</p>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                  {entry.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+
+
         {/* Projects Grid */}
         <section id="projects" className="mb-32">
           <div className="flex items-end justify-between mb-16">
