@@ -70,6 +70,51 @@ const skillGroups = [
   },
 ];
 
+const services = [
+  {
+    id: "S01",
+    title: "Smart Contract Development",
+    description:
+      "Solidity contracts for DApps — donation tracking, verification, and on-chain records — with Hardhat testing and testnet deployment.",
+  },
+  {
+    id: "S02",
+    title: "Cloud Architecture",
+    description:
+      "AWS-backed, cloud-native system design: scalable services, secure data flows, and deployment workflows built to grow.",
+  },
+  {
+    id: "S03",
+    title: "Explainable ML Systems",
+    description:
+      "Anomaly detection and classification pipelines with SHAP/TreeSHAP explanations, so every flagged decision is auditable.",
+  },
+];
+
+const timeline = [
+  {
+    period: "Sept 2026 — Present",
+    title: "Friday — Voice Assistant",
+    org: "Independent Project",
+    description:
+      "Building a persistent-memory voice assistant on a LangChain multi-agent architecture, benchmarked against a LiveKit/Gemini stack.",
+  },
+  {
+    period: "Aug 2026",
+    title: "VEXIS — Explainable VANET Intrusion Detection",
+    org: "Research (IEEE-submitted)",
+    description:
+      "Designed ExBDT, pairing Binary Trie routing with CART/C4.5 trees and SHAP explanations, evaluated on VeReMi Extension and CICIDS 2017.",
+  },
+  {
+    period: "Oct 2025",
+    title: "GiftChain — Donation Tracking DApp",
+    org: "Independent Project",
+    description:
+      "Developed the Solidity contract and Web3 React frontend for transparent, tamper-resistant donation tracking.",
+  },
+];
+
 function Index() {
   return (
     <div className="relative min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-white overflow-x-hidden">
