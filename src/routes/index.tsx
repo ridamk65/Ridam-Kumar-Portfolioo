@@ -18,7 +18,7 @@ const projects = [
   {
     id: "01",
     title: "Friday",
-    year: "2024",
+    year: "Sept 2 (WORK IN PROGRESS)",
     description:
       "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
     role: "AI Systems Engineer",
@@ -111,7 +111,7 @@ function Index() {
             </p>
             <div className="mt-12 flex gap-6 font-mono text-xs uppercase tracking-widest">
               <a
-                href="https://github.com"
+                href="https://github.com/ridamk65"
                 target="_blank"
                 rel="noreferrer"
                 className="text-foreground/60 hover:text-foreground transition-colors"
@@ -119,7 +119,7 @@ function Index() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/ridam-kumar"
                 target="_blank"
                 rel="noreferrer"
                 className="text-foreground/60 hover:text-foreground transition-colors"
@@ -277,21 +277,34 @@ function Index() {
                 open to: software engineering & Web3 / blockchain roles
               </p>
               <a
-                href="mailto:[add your email]"
+                href="mailto:kumarridam172@gmail.com"
                 className="font-mono text-sm text-foreground/80 hover:text-primary transition-colors"
               >
-                email: [add your email]
+                email: kumarridam172@gmail.com
               </a>
             </div>
-            <div className="md:text-right">
+            <div className="flex flex-wrap gap-3 md:justify-end">
               <a
-                href="mailto:[add your email]"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.2em] transition-all hover:pr-10"
+                href="mailto:kumarridam172@gmail.com"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-primary/90"
               >
-                Initialize
-                <span className="absolute right-4 transition-all opacity-0 group-hover:opacity-100">
-                  →
-                </span>
+                Email
+              </a>
+              <a
+                href="https://github.com/ridamk65"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/ridam-kumar"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                LinkedIn
               </a>
             </div>
           </div>
