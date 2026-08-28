@@ -119,10 +119,10 @@ function Index() {
             <div className="absolute left-[-2rem] top-1/2 size-3 rounded-full bg-foreground/30 animate-float-slow" />
           </div>
 
-          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left: identity */}
-            <div>
-              <h1 className="font-display font-black tracking-tighter leading-[0.9] text-6xl md:text-8xl">
+            <div className="lg:col-span-4">
+              <h1 className="font-display font-black tracking-tighter leading-[0.9] text-6xl md:text-8xl lg:text-7xl">
                 Hi,
                 <br />
                 I&apos;m <span className="text-primary">Ridam</span>
@@ -147,8 +147,23 @@ function Index() {
               </div>
             </div>
 
+            {/* Center: portrait */}
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="relative w-full max-w-[300px] aspect-[3/4]">
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/25 to-transparent blur-2xl" />
+                <div className="relative h-full w-full border border-border bg-secondary/40 backdrop-blur-sm flex flex-col items-center justify-center gap-4 overflow-hidden">
+                  <span className="font-display text-6xl font-black tracking-tighter text-foreground/25">
+                    RK
+                  </span>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground text-center px-6">
+                    Portrait slot — upload your photo
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Right: statement */}
-            <div className="lg:pl-10 lg:border-l border-border">
+            <div className="lg:col-span-4 lg:pl-10 lg:border-l border-border">
               <p className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-5">
                 Expert on
               </p>
