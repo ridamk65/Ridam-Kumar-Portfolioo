@@ -72,14 +72,29 @@ const skillGroups = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-white">
+    <div className="relative min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-white overflow-x-hidden">
+      {/* Global background effect */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute inset-0 grid-backdrop opacity-40" />
+        <div className="absolute -top-32 -left-24 size-[28rem] rounded-full bg-primary/15 blur-[140px] animate-pulse-glow" />
+        <div className="absolute top-1/3 -right-32 size-[32rem] rounded-full bg-primary/10 blur-[160px] animate-drift" />
+      </div>
+
       {/* Header Navigation */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-mono text-xs tracking-tighter text-primary uppercase">
-            Ridam_Kumar
-          </span>
-          <div className="flex gap-8 text-[11px] font-mono uppercase tracking-widest">
+      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/70 backdrop-blur-md">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+          <div className="flex items-center gap-6 min-w-0">
+            <span className="font-mono text-xs tracking-tighter text-primary uppercase">
+              Ridam_Kumar
+            </span>
+            <a
+              href="mailto:kumarridam172@gmail.com"
+              className="hidden sm:inline font-mono text-[11px] text-muted-foreground hover:text-foreground transition-colors truncate"
+            >
+              kumarridam172@gmail.com
+            </a>
+          </div>
+          <div className="flex gap-6 sm:gap-8 text-[11px] font-mono uppercase tracking-widest">
             <a href="#projects" className="text-foreground/70 hover:text-primary transition-colors">
               Projects
             </a>
@@ -94,46 +109,74 @@ function Index() {
       </nav>
 
       <main className="max-w-6xl mx-auto px-6 pt-32 pb-24">
-        {/* Hero Section */}
+        {/* Hero Section — split layout */}
         <section className="relative mb-32 animate-reveal">
-          <div className="absolute -top-24 -left-24 size-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
-          <div className="relative">
-            <p className="font-mono text-xs text-primary mb-4 tracking-[0.2em] uppercase">
-              Blockchain & AWS Architect Developer
-            </p>
-            <h1 className="text-7xl md:text-9xl font-display font-black tracking-tighter leading-[0.85] mb-8">
-              RIDAM <br /> KUMAR
-            </h1>
-            <p className="max-w-xl text-lg text-muted-foreground font-light leading-relaxed text-pretty">
-              Building secure, decentralized systems and cloud-native architectures. From audited
-              smart contracts to AWS-backed infrastructure, I turn complex ideas into
-              production-ready products.
-            </p>
-            <div className="mt-12 flex gap-6 font-mono text-xs uppercase tracking-widest">
-              <a
-                href="https://github.com/ridamk65"
-                target="_blank"
-                rel="noreferrer"
-                className="text-foreground/60 hover:text-foreground transition-colors"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/ridam-kumar"
-                target="_blank"
-                rel="noreferrer"
-                className="text-foreground/60 hover:text-foreground transition-colors"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="text-foreground/60 hover:text-foreground transition-colors"
-              >
-                Twitter / X
-              </a>
+          {/* decorative shapes */}
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <div className="absolute right-10 -top-10 size-24 rounded-full border-2 border-primary/60 animate-float-slow" />
+            <div className="absolute right-4 -top-16 size-6 rounded-full border-2 border-primary" />
+            <div className="absolute right-40 top-24 size-4 rounded-full bg-primary/80 animate-drift" />
+            <div className="absolute left-[-2rem] top-1/2 size-3 rounded-full bg-foreground/30 animate-float-slow" />
+          </div>
+
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left: identity */}
+            <div>
+              <h1 className="font-display font-black tracking-tighter leading-[0.9] text-6xl md:text-8xl">
+                Hi,
+                <br />
+                I&apos;m <span className="text-primary">Ridam</span>
+              </h1>
+              <p className="mt-6 text-xl md:text-2xl font-light text-muted-foreground">
+                Blockchain &amp; AWS Architect Developer
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="mailto:kumarridam172@gmail.com"
+                  className="group inline-flex items-center gap-3 px-6 py-3.5 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.15em] transition-transform hover:-translate-y-0.5"
+                >
+                  Hire Me
+                  <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+                </a>
+                <a
+                  href="#projects"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary"
+                >
+                  View Work
+                </a>
+              </div>
+            </div>
+
+            {/* Right: statement */}
+            <div className="lg:pl-10 lg:border-l border-border">
+              <p className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-5">
+                Expert on
+              </p>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight leading-snug text-pretty">
+                Based in India — I build blockchain systems and cloud-native architectures.
+              </h2>
+              <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-md text-pretty">
+                From audited smart contracts and decentralized applications to explainable ML and
+                AWS-backed infrastructure, I turn complex ideas into production-ready products.
+              </p>
+              <div className="mt-8 flex gap-6 font-mono text-xs uppercase tracking-widest">
+                <a
+                  href="https://github.com/ridamk65"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-foreground/70 hover:text-primary transition-colors border-b border-primary/40 pb-1"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ridam-kumar"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-foreground/70 hover:text-primary transition-colors border-b border-primary/40 pb-1"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </section>
