@@ -18,7 +18,7 @@ const projects = [
   {
     id: "01",
     title: "Friday",
-    year: "Sept 2 (WORK IN PROGRESS)",
+    year: "Sept 2026",
     description:
       "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
     role: "AI Systems Engineer",
@@ -299,7 +299,7 @@ function Index() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/ridam-kumar"
+                href="https://www.linkedin.com/in/ridam-kumar"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary hover:text-foreground"
