@@ -59,66 +59,59 @@ const projects = [
 const skillGroups = [
   {
     title: "Languages",
-    items: ["Java", "Python", "JavaScript", "Solidity"],
+    items: ["Python", "SQL", "Java", "Solidity"],
   },
   {
     title: "Blockchain",
-    items: ["Ethereum", "Hyperledger Fabric", "Web3", "Smart Contracts"],
+    items: ["Hardhat", "Hyperledger Fabric", "Ethereum MainNet", "Smart Contracts"],
   },
   {
-    title: "ML / Explainability",
-    items: ["Isolation Forest", "CART / C4.5", "SHAP / TreeSHAP"],
+    title: "Cloud & Backend",
+    items: ["AWS S3", "EC2", "IAM", "CloudFront", "Route 53", "Node.js", "Express.js"],
   },
   {
-    title: "Systems & Tools",
-    items: ["Thanos", "LangChain", "GPT-4", "Git", "SQL"],
+    title: "Tools & Core CS",
+    items: ["NS3", "SUMO", "Matplotlib", "Git", "Postman", "DBMS", "OS", "OOPS"],
   },
 ];
 
-const services = [
+const experience = [
   {
-    id: "S01",
-    title: "Smart Contract Development",
-    description:
-      "Solidity contracts for DApps — donation tracking, verification, and on-chain records — with Hardhat testing and testnet deployment.",
-  },
-  {
-    id: "S02",
-    title: "Cloud Architecture",
-    description:
-      "AWS-backed, cloud-native system design: scalable services, secure data flows, and deployment workflows built to grow.",
-  },
-  {
-    id: "S03",
-    title: "Explainable ML Systems",
-    description:
-      "Anomaly detection and classification pipelines with SHAP/TreeSHAP explanations, so every flagged decision is auditable.",
+    period: "July 2025 — Sept 2025",
+    title: "Backend & AWS Developer Intern",
+    org: "PropGrowthX",
+    points: [
+      "Built and maintained RESTful APIs with Node.js and Express.js for property listing, retrieval, and management.",
+      "Integrated AWS S3 for secure image storage and configured IAM, EC2, CloudFront, Route 53, and Certificate Manager (TLS/SSL) for scalable deployment.",
+      "Tested and debugged APIs with Postman, ensuring accurate data flow between frontend and backend.",
+      "Collaborated on backend performance, secure API workflows, and deployment using Git, GitHub, Supabase, and Vercel.",
+    ],
   },
 ];
 
-const timeline = [
+const education = {
+  degree: "B.E. Computer Science and Engineering",
+  school: "Sathyabama Institute of Science and Technology",
+  period: "Sep 2023 — Present",
+  specialization: "Blockchain Technology",
+  cgpa: "7.56",
+};
+
+const achievements = [
   {
-    period: "Sept 2026 — Present",
-    title: "Friday — Voice Assistant",
-    org: "Independent Project",
+    id: "A01",
+    title: "Smart India Hackathon",
     description:
-      "Building a persistent-memory voice assistant on a LangChain multi-agent architecture, benchmarked against a LiveKit/Gemini stack.",
+      "Selected participant — innovative problem solving, analytical thinking, and teamwork under competitive conditions.",
   },
   {
-    period: "Aug 2026",
-    title: "VEXIS — Explainable VANET Intrusion Detection",
-    org: "Research (IEEE-submitted)",
+    id: "A02",
+    title: "BlockTech SIST — Core Management Member",
     description:
-      "Designed ExBDT, pairing Binary Trie routing with CART/C4.5 trees and SHAP explanations, evaluated on VeReMi Extension and CICIDS 2017.",
-  },
-  {
-    period: "Oct 2025",
-    title: "GiftChain — Donation Tracking DApp",
-    org: "Independent Project",
-    description:
-      "Developed the Solidity contract and Web3 React frontend for transparent, tamper-resistant donation tracking.",
+      "Led planning and execution of technical events and workshops, building team leadership and event coordination skills.",
   },
 ];
+
 
 function Index() {
   return (
@@ -144,13 +137,20 @@ function Index() {
               kumarridam172@gmail.com
             </a>
           </div>
-          <div className="flex gap-6 sm:gap-8 text-[11px] font-mono uppercase tracking-widest">
+          <div className="flex gap-5 sm:gap-7 text-[11px] font-mono uppercase tracking-widest">
+            <a href="#experience" className="hidden sm:inline text-foreground/70 hover:text-primary transition-colors">
+              Experience
+            </a>
             <a href="#projects" className="text-foreground/70 hover:text-primary transition-colors">
               Projects
             </a>
             <a href="#skills" className="text-foreground/70 hover:text-primary transition-colors">
               Stack
             </a>
+            <a href="#education" className="hidden sm:inline text-foreground/70 hover:text-primary transition-colors">
+              Education
+            </a>
+
             <a href="#contact" className="text-foreground/70 hover:text-primary transition-colors">
               Connect
             </a>
@@ -224,7 +224,7 @@ function Index() {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/ridam-kumar"
+                  href="https://www.linkedin.com/in/ridam-kumar-3a96361b8/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-foreground/70 hover:text-primary transition-colors border-b border-primary/40 pb-1"
@@ -250,38 +250,13 @@ function Index() {
           </p>
         </section>
 
-        {/* Services */}
-        <section id="services" className="mb-32 animate-reveal">
-          <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
-            Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="group bg-background p-8 transition-colors hover:bg-secondary/40"
-              >
-                <span className="font-mono text-[10px] text-primary tracking-[0.2em]">
-                  {service.id}
-                </span>
-                <h3 className="mt-6 text-xl font-display font-semibold group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Experience Timeline */}
+        {/* Experience */}
         <section id="experience" className="mb-32 animate-reveal">
           <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
             Experience
           </h2>
           <ol className="relative border-l border-border pl-8 space-y-12">
-            {timeline.map((entry) => (
+            {experience.map((entry) => (
               <li key={entry.title} className="relative">
                 <span className="absolute -left-[2.15rem] top-1.5 size-3 rounded-full bg-primary ring-4 ring-background" />
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
@@ -289,13 +264,21 @@ function Index() {
                 </p>
                 <h3 className="mt-2 text-xl font-display font-semibold">{entry.title}</h3>
                 <p className="text-sm font-mono text-primary/80">{entry.org}</p>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                  {entry.description}
-                </p>
+                <ul className="mt-4 space-y-2 max-w-2xl">
+                  {entry.points.map((point) => (
+                    <li
+                      key={point}
+                      className="text-sm text-muted-foreground leading-relaxed pl-4 border-l border-border"
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ol>
         </section>
+
 
 
 
@@ -422,6 +405,48 @@ function Index() {
           </div>
         </section>
 
+        {/* Education & Achievements */}
+        <section id="education" className="mb-32 animate-reveal grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+              Education
+            </h2>
+            <div className="border border-border p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                {education.period}
+              </p>
+              <h3 className="mt-3 text-xl font-display font-semibold">{education.degree}</h3>
+              <p className="text-sm font-mono text-primary/80 mt-1">{education.school}</p>
+              <div className="mt-6 flex flex-wrap gap-2 font-mono text-[11px]">
+                <span className="py-1.5 px-3 border border-border">
+                  Specialization: {education.specialization}
+                </span>
+                <span className="py-1.5 px-3 border border-border">CGPA: {education.cgpa}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+              Achievements
+            </h2>
+            <div className="grid grid-cols-1 gap-px bg-border border border-border">
+              {achievements.map((item) => (
+                <div key={item.id} className="bg-background p-6 md:p-8">
+                  <span className="font-mono text-[10px] text-primary tracking-[0.2em]">
+                    {item.id}
+                  </span>
+                  <h3 className="mt-4 text-lg font-display font-semibold">{item.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+
         {/* Contact */}
         <section id="contact" className="py-24 border-t border-border animate-reveal">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -433,12 +458,22 @@ function Index() {
               <p className="text-muted-foreground max-w-md mb-8">
                 open to: software engineering & Web3 / blockchain roles
               </p>
-              <a
-                href="mailto:kumarridam172@gmail.com"
-                className="font-mono text-sm text-foreground/80 hover:text-primary transition-colors"
-              >
-                email: kumarridam172@gmail.com
-              </a>
+              <div className="space-y-2 font-mono text-sm">
+                <a
+                  href="mailto:kumarridam172@gmail.com"
+                  className="block text-foreground/80 hover:text-primary transition-colors"
+                >
+                  email: kumarridam172@gmail.com
+                </a>
+                <a
+                  href="tel:+916207422455"
+                  className="block text-foreground/80 hover:text-primary transition-colors"
+                >
+                  phone: +91 62074 22455
+                </a>
+                <p className="text-muted-foreground">location: Patna, Bihar, India</p>
+              </div>
+
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <a
@@ -456,7 +491,7 @@ function Index() {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/ridam-kumar"
+                href="https://www.linkedin.com/in/ridam-kumar-3a96361b8/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary hover:text-foreground"
