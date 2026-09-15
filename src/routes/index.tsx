@@ -137,13 +137,20 @@ function Index() {
               kumarridam172@gmail.com
             </a>
           </div>
-          <div className="flex gap-6 sm:gap-8 text-[11px] font-mono uppercase tracking-widest">
+          <div className="flex gap-5 sm:gap-7 text-[11px] font-mono uppercase tracking-widest">
+            <a href="#experience" className="hidden sm:inline text-foreground/70 hover:text-primary transition-colors">
+              Experience
+            </a>
             <a href="#projects" className="text-foreground/70 hover:text-primary transition-colors">
               Projects
             </a>
             <a href="#skills" className="text-foreground/70 hover:text-primary transition-colors">
               Stack
             </a>
+            <a href="#education" className="hidden sm:inline text-foreground/70 hover:text-primary transition-colors">
+              Education
+            </a>
+
             <a href="#contact" className="text-foreground/70 hover:text-primary transition-colors">
               Connect
             </a>
