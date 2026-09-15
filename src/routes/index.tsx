@@ -398,6 +398,48 @@ function Index() {
           </div>
         </section>
 
+        {/* Education & Achievements */}
+        <section id="education" className="mb-32 animate-reveal grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+              Education
+            </h2>
+            <div className="border border-border p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                {education.period}
+              </p>
+              <h3 className="mt-3 text-xl font-display font-semibold">{education.degree}</h3>
+              <p className="text-sm font-mono text-primary/80 mt-1">{education.school}</p>
+              <div className="mt-6 flex flex-wrap gap-2 font-mono text-[11px]">
+                <span className="py-1.5 px-3 border border-border">
+                  Specialization: {education.specialization}
+                </span>
+                <span className="py-1.5 px-3 border border-border">CGPA: {education.cgpa}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+              Achievements
+            </h2>
+            <div className="grid grid-cols-1 gap-px bg-border border border-border">
+              {achievements.map((item) => (
+                <div key={item.id} className="bg-background p-6 md:p-8">
+                  <span className="font-mono text-[10px] text-primary tracking-[0.2em]">
+                    {item.id}
+                  </span>
+                  <h3 className="mt-4 text-lg font-display font-semibold">{item.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+
         {/* Contact */}
         <section id="contact" className="py-24 border-t border-border animate-reveal">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
