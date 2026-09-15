@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HeroPortrait } from "@/components/HeroPortrait";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -194,17 +195,7 @@ function Index() {
 
             {/* Center: portrait */}
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative w-full max-w-[300px] aspect-[3/4]">
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/25 to-transparent blur-2xl" />
-                <div className="relative h-full w-full border border-border bg-secondary/40 backdrop-blur-sm flex flex-col items-center justify-center gap-4 overflow-hidden">
-                  <span className="font-display text-6xl font-black tracking-tighter text-foreground/25">
-                    RK
-                  </span>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground text-center px-6">
-                    Portrait slot — upload your photo
-                  </p>
-                </div>
-              </div>
+              <HeroPortrait />
             </div>
 
             {/* Right: statement */}
