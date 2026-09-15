@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroPortrait } from "@/components/HeroPortrait";
+import { ProjectVisual } from "@/components/ProjectVisual";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,6 +20,7 @@ const projects = [
   {
     id: "01",
     title: "Friday",
+    visual: "agents" as const,
     year: "Sept 2026",
     description:
       "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
