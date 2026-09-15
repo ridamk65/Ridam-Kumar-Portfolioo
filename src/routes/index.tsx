@@ -217,7 +217,7 @@ function Index() {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/ridam-kumar"
+                  href="https://www.linkedin.com/in/ridam-kumar-3a96361b8/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-foreground/70 hover:text-primary transition-colors border-b border-primary/40 pb-1"
@@ -474,7 +474,7 @@ function Index() {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/ridam-kumar"
+                href="https://www.linkedin.com/in/ridam-kumar-3a96361b8/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary hover:text-foreground"
