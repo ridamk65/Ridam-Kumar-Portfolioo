@@ -318,67 +318,77 @@ function Index() {
                   className="group md:col-span-2 bg-background p-8 md:p-12 transition-colors hover:bg-secondary/40 animate-reveal"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex flex-col md:flex-row md:justify-between items-start gap-6 mb-12">
-                    <div>
-                      <h3 className="text-3xl font-display font-bold group-hover:text-primary transition-colors mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground text-base max-w-2xl leading-relaxed">
-                        {project.description}
-                      </p>
-                    </div>
-                    <span className="font-mono text-[10px] py-1 px-2 border border-border shrink-0">
-                      {project.year}
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-mono py-1.5 px-3 bg-secondary text-muted-foreground border border-border"
-                        >
-                          {tag}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                    <div className="flex flex-col">
+                      <div className="flex flex-col md:flex-row md:justify-between items-start gap-6 mb-12">
+                        <div>
+                          <h3 className="text-3xl font-display font-bold group-hover:text-primary transition-colors mb-2">
+                            {project.title}
+                          </h3>
+                          <p className="text-muted-foreground text-base max-w-2xl leading-relaxed">
+                            {project.description}
+                          </p>
+                        </div>
+                        <span className="font-mono text-[10px] py-1 px-2 border border-border shrink-0">
+                          {project.year}
                         </span>
-                      ))}
+                      </div>
+                      <div className="mt-auto flex flex-wrap items-center gap-6">
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-[10px] font-mono py-1.5 px-3 bg-secondary text-muted-foreground border border-border"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="h-px flex-1 bg-border hidden md:block" />
+                        <p className="text-xs font-mono text-primary/80 uppercase tracking-widest font-semibold">
+                          {project.role} — {project.outcome}
+                        </p>
+                      </div>
                     </div>
-                    <div className="h-px flex-1 bg-border hidden md:block" />
-                    <p className="text-xs font-mono text-primary/80 uppercase tracking-widest font-semibold">
-                      {project.role} — {project.outcome}
-                    </p>
+                    <ProjectVisual kind={project.visual} />
                   </div>
                 </div>
               ) : (
                 <div
                   key={project.id}
-                  className="group bg-background p-8 transition-colors hover:bg-secondary/40 animate-reveal"
+                  className="group md:col-span-2 bg-background p-8 md:p-12 transition-colors hover:bg-secondary/40 animate-reveal"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex justify-between items-start mb-12">
-                    <h3 className="text-2xl font-display font-semibold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <span className="font-mono text-[10px] py-1 px-2 border border-border">
-                      {project.year}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 5).map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-mono py-1 px-2 bg-secondary text-muted-foreground border border-border"
-                        >
-                          {tag}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                    <div className="flex flex-col">
+                      <div className="flex justify-between items-start mb-12">
+                        <h3 className="text-2xl font-display font-semibold group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        <span className="font-mono text-[10px] py-1 px-2 border border-border shrink-0">
+                          {project.year}
                         </span>
-                      ))}
+                      </div>
+                      <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                        {project.description}
+                      </p>
+                      <div className="mt-auto space-y-4">
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.slice(0, 5).map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-[10px] font-mono py-1 px-2 bg-secondary text-muted-foreground border border-border"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-[11px] font-mono text-primary/80 uppercase tracking-tighter">
+                          {project.role} — {project.outcome}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-[11px] font-mono text-primary/80 uppercase tracking-tighter">
-                      {project.role} — {project.outcome}
-                    </p>
+                    <ProjectVisual kind={project.visual} />
                   </div>
                 </div>
               )
