@@ -32,6 +32,7 @@ const projects = [
   {
     id: "02",
     title: "GiftChain",
+    visual: "ledger" as const,
     year: "Oct 2025",
     description:
       "A decentralized donation-tracking application that records donation transactions transparently on the blockchain.",
@@ -44,6 +45,7 @@ const projects = [
   {
     id: "03",
     title: "VEXIS",
+    visual: "anomaly" as const,
     year: "Aug 2026",
     description:
       "An explainable misbehavior-detection system for Vehicular Ad-hoc Networks (VANETs). ExBDT combines Binary Trie routing with CART/C4.5 decision trees, while SHAP/TreeSHAP explains why a node is flagged.",
