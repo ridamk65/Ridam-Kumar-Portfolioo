@@ -59,66 +59,59 @@ const projects = [
 const skillGroups = [
   {
     title: "Languages",
-    items: ["Java", "Python", "JavaScript", "Solidity"],
+    items: ["Python", "SQL", "Java", "Solidity"],
   },
   {
     title: "Blockchain",
-    items: ["Ethereum", "Hyperledger Fabric", "Web3", "Smart Contracts"],
+    items: ["Hardhat", "Hyperledger Fabric", "Ethereum MainNet", "Smart Contracts"],
   },
   {
-    title: "ML / Explainability",
-    items: ["Isolation Forest", "CART / C4.5", "SHAP / TreeSHAP"],
+    title: "Cloud & Backend",
+    items: ["AWS S3", "EC2", "IAM", "CloudFront", "Route 53", "Node.js", "Express.js"],
   },
   {
-    title: "Systems & Tools",
-    items: ["Thanos", "LangChain", "GPT-4", "Git", "SQL"],
+    title: "Tools & Core CS",
+    items: ["NS3", "SUMO", "Matplotlib", "Git", "Postman", "DBMS", "OS", "OOPS"],
   },
 ];
 
-const services = [
+const experience = [
   {
-    id: "S01",
-    title: "Smart Contract Development",
-    description:
-      "Solidity contracts for DApps — donation tracking, verification, and on-chain records — with Hardhat testing and testnet deployment.",
-  },
-  {
-    id: "S02",
-    title: "Cloud Architecture",
-    description:
-      "AWS-backed, cloud-native system design: scalable services, secure data flows, and deployment workflows built to grow.",
-  },
-  {
-    id: "S03",
-    title: "Explainable ML Systems",
-    description:
-      "Anomaly detection and classification pipelines with SHAP/TreeSHAP explanations, so every flagged decision is auditable.",
+    period: "July 2025 — Sept 2025",
+    title: "Backend & AWS Developer Intern",
+    org: "PropGrowthX",
+    points: [
+      "Built and maintained RESTful APIs with Node.js and Express.js for property listing, retrieval, and management.",
+      "Integrated AWS S3 for secure image storage and configured IAM, EC2, CloudFront, Route 53, and Certificate Manager (TLS/SSL) for scalable deployment.",
+      "Tested and debugged APIs with Postman, ensuring accurate data flow between frontend and backend.",
+      "Collaborated on backend performance, secure API workflows, and deployment using Git, GitHub, Supabase, and Vercel.",
+    ],
   },
 ];
 
-const timeline = [
+const education = {
+  degree: "B.E. Computer Science and Engineering",
+  school: "Sathyabama Institute of Science and Technology",
+  period: "Sep 2023 — Present",
+  specialization: "Blockchain Technology",
+  cgpa: "7.56",
+};
+
+const achievements = [
   {
-    period: "Sept 2026 — Present",
-    title: "Friday — Voice Assistant",
-    org: "Independent Project",
+    id: "A01",
+    title: "Smart India Hackathon",
     description:
-      "Building a persistent-memory voice assistant on a LangChain multi-agent architecture, benchmarked against a LiveKit/Gemini stack.",
+      "Selected participant — innovative problem solving, analytical thinking, and teamwork under competitive conditions.",
   },
   {
-    period: "Aug 2026",
-    title: "VEXIS — Explainable VANET Intrusion Detection",
-    org: "Research (IEEE-submitted)",
+    id: "A02",
+    title: "BlockTech SIST — Core Management Member",
     description:
-      "Designed ExBDT, pairing Binary Trie routing with CART/C4.5 trees and SHAP explanations, evaluated on VeReMi Extension and CICIDS 2017.",
-  },
-  {
-    period: "Oct 2025",
-    title: "GiftChain — Donation Tracking DApp",
-    org: "Independent Project",
-    description:
-      "Developed the Solidity contract and Web3 React frontend for transparent, tamper-resistant donation tracking.",
+      "Led planning and execution of technical events and workshops, building team leadership and event coordination skills.",
   },
 ];
+
 
 function Index() {
   return (
