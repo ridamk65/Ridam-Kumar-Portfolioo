@@ -458,12 +458,22 @@ function Index() {
               <p className="text-muted-foreground max-w-md mb-8">
                 open to: software engineering & Web3 / blockchain roles
               </p>
-              <a
-                href="mailto:kumarridam172@gmail.com"
-                className="font-mono text-sm text-foreground/80 hover:text-primary transition-colors"
-              >
-                email: kumarridam172@gmail.com
-              </a>
+              <div className="space-y-2 font-mono text-sm">
+                <a
+                  href="mailto:kumarridam172@gmail.com"
+                  className="block text-foreground/80 hover:text-primary transition-colors"
+                >
+                  email: kumarridam172@gmail.com
+                </a>
+                <a
+                  href="tel:+916207422455"
+                  className="block text-foreground/80 hover:text-primary transition-colors"
+                >
+                  phone: +91 62074 22455
+                </a>
+                <p className="text-muted-foreground">location: Patna, Bihar, India</p>
+              </div>
+
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <a
