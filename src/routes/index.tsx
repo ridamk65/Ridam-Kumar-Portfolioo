@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroPortrait } from "@/components/HeroPortrait";
 import { ProjectVisual } from "@/components/ProjectVisual";
+import { ContactDialog } from "@/components/ContactDialog";
+import { Reveal, RevealSection } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -160,7 +162,7 @@ function Index() {
 
       <main className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section — split layout */}
-        <section className="relative mb-32 animate-reveal">
+        <RevealSection className="relative mb-32">
           {/* decorative shapes */}
           <div aria-hidden className="pointer-events-none absolute inset-0">
             <div className="absolute right-10 -top-10 size-24 rounded-full border-2 border-primary/60 animate-float-slow" />
@@ -171,7 +173,7 @@ function Index() {
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left: identity */}
-            <div className="lg:col-span-4">
+            <Reveal className="lg:col-span-4" delay={0.05}>
               <h1 className="font-display font-black tracking-tighter leading-[0.9] text-6xl md:text-8xl lg:text-7xl">
                 Hi,
                 <br />
@@ -181,13 +183,7 @@ function Index() {
                 Blockchain &amp; AWS Architect Developer
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <a
-                  href="mailto:kumarridam172@gmail.com"
-                  className="group inline-flex items-center gap-3 px-6 py-3.5 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.15em] transition-transform hover:-translate-y-0.5"
-                >
-                  Hire Me
-                  <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-                </a>
+                <ContactDialog />
                 <a
                   href="#projects"
                   className="inline-flex items-center gap-3 px-6 py-3.5 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary"
@@ -195,15 +191,15 @@ function Index() {
                   View Work
                 </a>
               </div>
-            </div>
+            </Reveal>
 
             {/* Center: portrait */}
-            <div className="lg:col-span-4 flex justify-center">
+            <Reveal className="lg:col-span-4 flex justify-center" delay={0.14}>
               <HeroPortrait />
-            </div>
+            </Reveal>
 
             {/* Right: statement */}
-            <div className="lg:col-span-4 lg:pl-10 lg:border-l border-border">
+            <Reveal className="lg:col-span-4 lg:pl-10 lg:border-l border-border" delay={0.22}>
               <p className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-5">
                 Expert on
               </p>
@@ -232,12 +228,12 @@ function Index() {
                   LinkedIn
                 </a>
               </div>
-            </div>
+            </Reveal>
           </div>
-        </section>
+        </RevealSection>
 
         {/* About Section */}
-        <section className="mb-32 animate-reveal">
+        <RevealSection className="mb-32">
           <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
             About
           </h2>
@@ -248,10 +244,10 @@ function Index() {
             agents, I turn research-backed ideas into working products while deepening my AWS
             architecture practice.
           </p>
-        </section>
+        </RevealSection>
 
         {/* Experience */}
-        <section id="experience" className="mb-32 animate-reveal">
+        <RevealSection id="experience" className="mb-32 scroll-mt-24">
           <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
             Experience
           </h2>
@@ -277,13 +273,13 @@ function Index() {
               </li>
             ))}
           </ol>
-        </section>
+        </RevealSection>
 
 
 
 
         {/* Projects Grid */}
-        <section id="projects" className="mb-32">
+        <RevealSection id="projects" className="mb-32 scroll-mt-24">
           <div className="flex items-end justify-between mb-16">
             <h2 className="text-4xl font-display font-bold tracking-tight text-balance">
               Selected Works
@@ -296,10 +292,10 @@ function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border">
             {projects.map((project, index) =>
               project.featured ? (
-                <div
+                 <Reveal
                   key={project.id}
-                  className="group md:col-span-2 bg-background p-8 md:p-12 transition-colors hover:bg-secondary/40 animate-reveal"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                   className="group md:col-span-2 bg-background p-8 md:p-12 transition-colors hover:bg-secondary/40"
+                   delay={index * 0.08}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
                     <div className="flex flex-col">
@@ -335,12 +331,12 @@ function Index() {
                     </div>
                     <ProjectVisual kind={project.visual} />
                   </div>
-                </div>
+                </Reveal>
               ) : (
-                <div
+                 <Reveal
                   key={project.id}
-                  className="group md:col-span-2 bg-background p-8 md:p-12 transition-colors hover:bg-secondary/40 animate-reveal"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                   className="group md:col-span-2 bg-background p-8 md:p-12 transition-colors hover:bg-secondary/40"
+                   delay={index * 0.08}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
                     <div className="flex flex-col">
@@ -373,20 +369,20 @@ function Index() {
                     </div>
                     <ProjectVisual kind={project.visual} />
                   </div>
-                </div>
+                </Reveal>
               )
             )}
           </div>
-        </section>
+        </RevealSection>
 
         {/* Skills Section */}
-        <section id="skills" className="mb-32 animate-reveal">
+        <RevealSection id="skills" className="mb-32 scroll-mt-24">
           <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
             Stack Readout
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
-            {skillGroups.map((group) => (
-              <div key={group.title} className="bg-background p-6 md:p-8">
+            {skillGroups.map((group, index) => (
+              <Reveal key={group.title} className="bg-background p-6 md:p-8" delay={index * 0.07}>
                 <h4 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6">
                   {group.title}
                 </h4>
@@ -400,14 +396,14 @@ function Index() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
-        </section>
+        </RevealSection>
 
         {/* Education & Achievements */}
-        <section id="education" className="mb-32 animate-reveal grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+        <RevealSection id="education" className="mb-32 scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <Reveal>
             <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
               Education
             </h2>
@@ -424,14 +420,14 @@ function Index() {
                 <span className="py-1.5 px-3 border border-border">CGPA: {education.cgpa}</span>
               </div>
             </div>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={0.12}>
             <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
               Achievements
             </h2>
             <div className="grid grid-cols-1 gap-px bg-border border border-border">
               {achievements.map((item) => (
-                <div key={item.id} className="bg-background p-6 md:p-8">
+                <Reveal key={item.id} className="bg-background p-6 md:p-8">
                   <span className="font-mono text-[10px] text-primary tracking-[0.2em]">
                     {item.id}
                   </span>
@@ -439,16 +435,16 @@ function Index() {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
-                </div>
+                </Reveal>
               ))}
             </div>
-          </div>
-        </section>
+          </Reveal>
+        </RevealSection>
 
 
 
         {/* Contact */}
-        <section id="contact" className="py-24 border-t border-border animate-reveal">
+        <RevealSection id="contact" className="py-24 scroll-mt-16 border-t border-border">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-6">
@@ -500,7 +496,7 @@ function Index() {
               </a>
             </div>
           </div>
-        </section>
+        </RevealSection>
       </main>
 
       <footer className="border-t border-border">
