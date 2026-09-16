@@ -16,7 +16,7 @@ export function Reveal({ children, className, delay = 0, ...props }: RevealProps
 
   return (
     <motion.div
-      className={className}
+      className={`motion-reveal ${className ?? ""}`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.16 }}
@@ -44,7 +44,7 @@ export function RevealSection({ children, className, id }: RevealSectionProps) {
   return (
     <motion.section
       id={id}
-      className={className}
+      className={`motion-reveal ${className ?? ""}`}
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
