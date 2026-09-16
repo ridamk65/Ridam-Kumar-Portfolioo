@@ -191,7 +191,7 @@ function Index() {
                   View Work
                 </a>
               </div>
-            </Reveal>
+                        </div>
 
             {/* Center: portrait */}
             <Reveal className="lg:col-span-4 flex justify-center" delay={0.14}>
@@ -331,7 +331,7 @@ function Index() {
                     </div>
                     <ProjectVisual kind={project.visual} />
                   </div>
-                </div>
+                </Reveal>
               ) : (
                  <Reveal
                   key={project.id}
@@ -347,7 +347,7 @@ function Index() {
                         <span className="font-mono text-[10px] py-1 px-2 border border-border shrink-0">
                           {project.year}
                         </span>
-                 </Reveal>
+                      </div>
                       <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                         {project.description}
                       </p>
@@ -369,7 +369,7 @@ function Index() {
                     </div>
                     <ProjectVisual kind={project.visual} />
                   </div>
-                </div>
+                </Reveal>
               )
             )}
           </div>
