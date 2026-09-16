@@ -191,12 +191,12 @@ function Index() {
                   View Work
                 </a>
               </div>
-                        </div>
+            </Reveal>
 
             {/* Center: portrait */}
             <Reveal className="lg:col-span-4 flex justify-center" delay={0.14}>
               <HeroPortrait />
-            </Reveal>
+                        </div>
 
             {/* Right: statement */}
             <Reveal className="lg:col-span-4 lg:pl-10 lg:border-l border-border" delay={0.22}>
