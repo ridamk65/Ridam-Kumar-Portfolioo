@@ -66,8 +66,10 @@ export function ContactDialog() {
 
     setErrors({});
     const body = `Hi Ridam,\n\n${result.data.message}\n\nFrom: ${result.data.name}\nEmail: ${result.data.email}`;
-    window.location.href = `mailto:kumarridam172@gmail.com?subject=${encodeURIComponent(result.data.subject)}&body=${encodeURIComponent(body)}`;
     setOpen(false);
+    window.setTimeout(() => {
+      window.location.href = `mailto:kumarridam172@gmail.com?subject=${encodeURIComponent(result.data.subject)}&body=${encodeURIComponent(body)}`;
+    }, 0);
   }
 
   return (
