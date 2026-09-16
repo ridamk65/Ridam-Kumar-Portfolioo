@@ -196,7 +196,7 @@ function Index() {
             {/* Center: portrait */}
             <Reveal className="lg:col-span-4 flex justify-center" delay={0.14}>
               <HeroPortrait />
-                        </div>
+            </Reveal>
 
             {/* Right: statement */}
             <Reveal className="lg:col-span-4 lg:pl-10 lg:border-l border-border" delay={0.22}>
@@ -307,7 +307,7 @@ function Index() {
                           <p className="text-muted-foreground text-base max-w-2xl leading-relaxed">
                             {project.description}
                           </p>
-                 </Reveal>
+                        </div>
                         <span className="font-mono text-[10px] py-1 px-2 border border-border shrink-0">
                           {project.year}
                         </span>
