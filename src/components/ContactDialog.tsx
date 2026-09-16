@@ -34,6 +34,14 @@ export function ContactDialog() {
   const [open, setOpen] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
 
+  function clearError(field: keyof FormFields) {
+    setErrors((current) => {
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+  }
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -93,7 +101,7 @@ export function ContactDialog() {
                 maxLength={field.name === "email" ? 255 : field.name === "subject" ? 120 : 80}
                 aria-invalid={Boolean(errors[field.name])}
                 aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
-                onChange={() => setErrors((current) => ({ ...current, [field.name]: undefined }))}
+                onChange={() => clearError(field.name)}
                 className="h-11 w-full border border-input bg-secondary/40 px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
               />
               {errors[field.name] && <p id={`${field.name}-error`} className="mt-1.5 text-xs text-destructive">{errors[field.name]}</p>}
@@ -108,7 +116,7 @@ export function ContactDialog() {
               maxLength={1500}
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? "message-error" : undefined}
-              onChange={() => setErrors((current) => ({ ...current, message: undefined }))}
+              onChange={() => clearError("message")}
               className="w-full resize-y border border-input bg-secondary/40 px-3 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
             />
             {errors.message && <p id="message-error" className="mt-1.5 text-xs text-destructive">{errors.message}</p>}
