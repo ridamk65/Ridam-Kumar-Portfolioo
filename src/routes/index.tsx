@@ -112,6 +112,12 @@ const achievements = [
     description:
       "Led planning and execution of technical events and workshops, building team leadership and event coordination skills.",
   },
+  {
+    id: "A03",
+    title: "IEI — Treasurer (CS, BCT, AI & DS)",
+    description:
+      "Serving as Treasurer for the IEI Student Chapter at Sathyabama Institute of Science and Technology, overseeing financial coordination, budget management, and event-related financial activities while supporting student initiatives.",
+  },
 ];
 
 
@@ -423,7 +429,7 @@ function Index() {
           </Reveal>
           <Reveal delay={0.12}>
             <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
-              Achievements
+              Achievements &amp; Leadership
             </h2>
             <div className="grid grid-cols-1 gap-px bg-border border border-border">
               {achievements.map((item) => (
@@ -467,7 +473,7 @@ function Index() {
                 >
                   phone: +91 62074 22455
                 </a>
-                <p className="text-muted-foreground">location: Patna, Bihar, India</p>
+                <p className="text-muted-foreground">location: Chennai, Tamil Nadu, India</p>
               </div>
 
             </div>
