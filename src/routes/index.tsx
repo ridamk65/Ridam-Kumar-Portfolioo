@@ -1,8 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroPortrait } from "@/components/HeroPortrait";
 import { ProjectVisual } from "@/components/ProjectVisual";
 import { ContactDialog } from "@/components/ContactDialog";
+import { PortfolioNav } from "@/components/PortfolioNav";
 import { Reveal, RevealSection } from "@/components/Reveal";
+import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,46 +19,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const projects = [
-  {
-    id: "01",
-    title: "Friday",
-    visual: "agents" as const,
-    year: "Sept 2026",
-    description:
-      "A persistent-memory voice assistant built on a LangChain multi-agent architecture. Specialized agents coordinate routing, memory retrieval, and response generation, benchmarked against a LiveKit/Gemini implementation.",
-    role: "AI Systems Engineer",
-    outcome:
-      "Explored the build-vs-buy trade-off in real-time voice infrastructure by comparing a custom multi-agent stack to an off-the-shelf LiveKit/Gemini pipeline.",
-    tags: ["LangChain", "Multi-Agent", "Persistent Memory", "LiveKit", "Gemini", "Voice AI"],
-  },
-  {
-    id: "02",
-    title: "GiftChain",
-    visual: "ledger" as const,
-    year: "Oct 2025",
-    description:
-      "A decentralized donation-tracking application that records donation transactions transparently on the blockchain.",
-    role: "Smart Contract & Frontend Developer",
-    outcome:
-      "Developed a working DApp prototype demonstrating transparent and tamper-resistant donation tracking.",
-    tags: ["Solidity", "Ethereum", "Polygon", "React", "Vite", "Ethers.js", "Web3.js", "MetaMask", "Hardhat"],
-    featured: true,
-  },
-  {
-    id: "03",
-    title: "VEXIS",
-    visual: "anomaly" as const,
-    year: "Aug 2026",
-    description:
-      "An explainable misbehavior-detection system for Vehicular Ad-hoc Networks (VANETs). ExBDT combines Binary Trie routing with CART/C4.5 decision trees, while SHAP/TreeSHAP explains why a node is flagged.",
-    role: "Research & Systems Engineer",
-    outcome:
-      "IEEE-submitted work evaluated on VeReMi Extension and CICIDS 2017, demonstrating explainable intrusion detection for healthcare-adjacent vehicular infrastructure.",
-    tags: ["VANET", "ExBDT", "CART/C4.5", "SHAP", "TreeSHAP", "VeReMi", "CICIDS 2017"],
-  },
-];
 
 const skillGroups = [
   {
@@ -123,48 +85,14 @@ const achievements = [
 
 function Index() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-foreground overflow-x-hidden">
       {/* Global background effect */}
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute inset-0 grid-backdrop opacity-40" />
-        <div className="absolute -top-32 -left-24 size-[28rem] rounded-full bg-primary/15 blur-[140px] animate-pulse-glow" />
-        <div className="absolute top-1/3 -right-32 size-[32rem] rounded-full bg-primary/10 blur-[160px] animate-drift" />
+        <div className="absolute inset-0 grid-backdrop opacity-35" />
       </div>
 
       {/* Header Navigation */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/70 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
-          <div className="flex items-center gap-6 min-w-0">
-            <span className="font-mono text-xs tracking-tighter text-primary uppercase">
-              Ridam_Kumar
-            </span>
-            <a
-              href="mailto:kumarridam172@gmail.com"
-              className="hidden sm:inline font-mono text-[11px] text-muted-foreground hover:text-foreground transition-colors truncate"
-            >
-              kumarridam172@gmail.com
-            </a>
-          </div>
-          <div className="flex gap-5 sm:gap-7 text-[11px] font-mono uppercase tracking-widest">
-            <a href="#experience" className="hidden sm:inline text-foreground/70 hover:text-primary transition-colors">
-              Experience
-            </a>
-            <a href="#projects" className="text-foreground/70 hover:text-primary transition-colors">
-              Projects
-            </a>
-            <a href="#skills" className="text-foreground/70 hover:text-primary transition-colors">
-              Stack
-            </a>
-            <a href="#education" className="hidden sm:inline text-foreground/70 hover:text-primary transition-colors">
-              Education
-            </a>
-
-            <a href="#contact" className="text-foreground/70 hover:text-primary transition-colors">
-              Connect
-            </a>
-          </div>
-        </div>
-      </nav>
+      <PortfolioNav />
 
       <main className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section — split layout */}
@@ -190,12 +118,12 @@ function Index() {
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <ContactDialog />
-                <a
-                  href="#projects"
+                <Link
+                  to="/projects"
                   className="inline-flex items-center gap-3 px-6 py-3.5 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary"
                 >
                   View Work
-                </a>
+                </Link>
               </div>
             </Reveal>
 
@@ -378,6 +306,14 @@ function Index() {
                 </Reveal>
               )
             )}
+          </div>
+          <div className="mt-8 flex justify-end">
+            <Link
+              to="/projects"
+              className="border-b border-primary pb-1 font-mono text-xs uppercase tracking-widest text-primary transition-colors hover:text-foreground"
+            >
+              View all project details →
+            </Link>
           </div>
         </RevealSection>
 
