@@ -4,3 +4,5 @@
 - [x] Verify desktop, mobile, form, and reduced motion
 - [x] Change location to Chennai, Tamil Nadu, India
 - [x] Rename section to Achievements & Leadership, add A03 IEI Treasurer
+- [ ] Convert the portfolio to a white professional theme
+- [ ] Add and verify a dedicated Projects page
