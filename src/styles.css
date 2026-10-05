@@ -195,6 +195,25 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  min-width: 320px;
+}
+
+.page-enter {
+  animation: page-enter 420ms var(--ease-out-expo) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

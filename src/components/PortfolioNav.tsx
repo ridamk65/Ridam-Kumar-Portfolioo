@@ -2,11 +2,12 @@ import { Link } from "@tanstack/react-router";
 
 export function PortfolioNav() {
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
-        <div className="flex min-w-0 items-center gap-6">
-          <Link to="/" className="font-mono text-xs uppercase tracking-tighter text-primary">
-            Ridam_Kumar
+    <nav className="fixed top-0 z-50 w-full border-b border-border/80 bg-background/95 shadow-sm backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+        <div className="flex min-w-0 items-center gap-5">
+          <Link to="/" className="flex items-center gap-2 font-mono text-xs font-semibold uppercase text-foreground">
+            <span className="size-2 bg-primary" aria-hidden />
+            Ridam Kumar
           </Link>
           <a
             href="mailto:kumarridam172@gmail.com"
@@ -15,13 +16,15 @@ export function PortfolioNav() {
             kumarridam172@gmail.com
           </a>
         </div>
-        <div className="flex gap-5 font-mono text-[11px] uppercase tracking-widest sm:gap-7">
+        <div className="flex items-center gap-4 font-mono text-[10px] uppercase sm:gap-6 sm:text-[11px]">
           <Link
             to="/"
-            hash="experience"
-            className="hidden text-foreground/70 transition-colors hover:text-primary sm:inline"
+            activeOptions={{ exact: true }}
+            activeProps={{ className: "text-primary" }}
+            inactiveProps={{ className: "text-foreground/65 hover:text-primary" }}
+            className="hidden transition-colors md:inline"
           >
-            Experience
+            Home
           </Link>
           <Link
             to="/projects"
@@ -32,23 +35,17 @@ export function PortfolioNav() {
             Projects
           </Link>
           <Link
-            to="/"
-            hash="skills"
-            className="text-foreground/70 transition-colors hover:text-primary"
+            to="/resume"
+            activeProps={{ className: "text-primary" }}
+            inactiveProps={{ className: "text-foreground/65 hover:text-primary" }}
+            className="transition-colors"
           >
-            Stack
-          </Link>
-          <Link
-            to="/"
-            hash="education"
-            className="hidden text-foreground/70 transition-colors hover:text-primary sm:inline"
-          >
-            Education
+            Resume
           </Link>
           <Link
             to="/"
             hash="contact"
-            className="text-foreground/70 transition-colors hover:text-primary"
+            className="hidden text-foreground/65 transition-colors hover:text-primary sm:inline"
           >
             Connect
           </Link>
