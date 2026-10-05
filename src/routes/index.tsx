@@ -5,6 +5,7 @@ import { ContactDialog } from "@/components/ContactDialog";
 import { PortfolioNav } from "@/components/PortfolioNav";
 import { Reveal, RevealSection } from "@/components/Reveal";
 import { projects } from "@/lib/projects";
+import { achievements, education, experience, skillGroups } from "@/lib/resume";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,72 +21,9 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const skillGroups = [
-  {
-    title: "Languages",
-    items: ["Python", "SQL", "Java", "Solidity"],
-  },
-  {
-    title: "Blockchain",
-    items: ["Hardhat", "Hyperledger Fabric", "Ethereum MainNet", "Smart Contracts"],
-  },
-  {
-    title: "Cloud & Backend",
-    items: ["AWS S3", "EC2", "IAM", "CloudFront", "Route 53", "Node.js", "Express.js"],
-  },
-  {
-    title: "Tools & Core CS",
-    items: ["NS3", "SUMO", "Matplotlib", "Git", "Postman", "DBMS", "OS", "OOPS"],
-  },
-];
-
-const experience = [
-  {
-    period: "July 2025 — Sept 2025",
-    title: "Backend & AWS Developer Intern",
-    org: "PropGrowthX",
-    points: [
-      "Built and maintained RESTful APIs with Node.js and Express.js for property listing, retrieval, and management.",
-      "Integrated AWS S3 for secure image storage and configured IAM, EC2, CloudFront, Route 53, and Certificate Manager (TLS/SSL) for scalable deployment.",
-      "Tested and debugged APIs with Postman, ensuring accurate data flow between frontend and backend.",
-      "Collaborated on backend performance, secure API workflows, and deployment using Git, GitHub, Supabase, and Vercel.",
-    ],
-  },
-];
-
-const education = {
-  degree: "B.E. Computer Science and Engineering",
-  school: "Sathyabama Institute of Science and Technology",
-  period: "Sep 2023 — Present",
-  specialization: "Blockchain Technology",
-  cgpa: "7.56",
-};
-
-const achievements = [
-  {
-    id: "A01",
-    title: "Smart India Hackathon",
-    description:
-      "Selected participant — innovative problem solving, analytical thinking, and teamwork under competitive conditions.",
-  },
-  {
-    id: "A02",
-    title: "BlockTech SIST — Core Management Member",
-    description:
-      "Led planning and execution of technical events and workshops, building team leadership and event coordination skills.",
-  },
-  {
-    id: "A03",
-    title: "IEI — Treasurer (CS, BCT, AI & DS)",
-    description:
-      "Serving as Treasurer for the IEI Student Chapter at Sathyabama Institute of Science and Technology, overseeing financial coordination, budget management, and event-related financial activities while supporting student initiatives.",
-  },
-];
-
-
 function Index() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-foreground overflow-x-hidden">
+    <div className="page-enter relative min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-foreground overflow-x-hidden">
       {/* Global background effect */}
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 grid-backdrop opacity-35" />

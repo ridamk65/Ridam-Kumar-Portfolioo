@@ -80,7 +80,8 @@ export function ContactDialog() {
           <ArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-[90vh] max-w-xl overflow-y-auto rounded-none border-border bg-background p-6 shadow-2xl sm:p-8">
+      <DialogContent className="max-h-[90vh] max-w-xl overflow-y-auto rounded-sm border-border bg-card p-0 shadow-2xl sm:max-w-2xl">
+        <div className="border-b border-border bg-secondary/50 px-6 py-5 sm:px-8">
         <DialogHeader>
           <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">New inquiry</p>
           <DialogTitle className="font-display text-3xl">Let&apos;s build something useful.</DialogTitle>
@@ -88,8 +89,9 @@ export function ContactDialog() {
             Share the role, project, or collaboration you have in mind. Your email app will open with everything ready to send.
           </DialogDescription>
         </DialogHeader>
+        </div>
 
-        <form className="mt-3 space-y-5" onSubmit={handleSubmit} noValidate>
+        <form className="space-y-5 px-6 py-6 sm:px-8 sm:py-7" onSubmit={handleSubmit} noValidate>
           {fields.map((field) => (
             <div key={field.name}>
               <label htmlFor={field.name} className="mb-2 block font-mono text-[11px] uppercase tracking-widest text-foreground/80">
@@ -104,7 +106,7 @@ export function ContactDialog() {
                 aria-invalid={Boolean(errors[field.name])}
                 aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
                 onChange={() => clearError(field.name)}
-                className="h-11 w-full border border-input bg-secondary/40 px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
+                className="h-11 w-full rounded-sm border border-input bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/15"
               />
               {errors[field.name] && <p id={`${field.name}-error`} className="mt-1.5 text-xs text-destructive">{errors[field.name]}</p>}
             </div>
@@ -119,16 +121,16 @@ export function ContactDialog() {
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? "message-error" : undefined}
               onChange={() => clearError("message")}
-              className="w-full resize-y border border-input bg-secondary/40 px-3 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
+              className="w-full resize-y rounded-sm border border-input bg-background px-3 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/15"
             />
             {errors.message && <p id="message-error" className="mt-1.5 text-xs text-destructive">{errors.message}</p>}
           </div>
 
           <DialogFooter className="gap-3 pt-2 sm:space-x-0">
             <DialogClose asChild>
-              <Button type="button" variant="outline" className="rounded-none font-mono text-xs uppercase tracking-widest">Cancel</Button>
+              <Button type="button" variant="outline" className="rounded-sm font-mono text-xs uppercase tracking-widest">Cancel</Button>
             </DialogClose>
-            <Button type="submit" className="rounded-none font-mono text-xs uppercase tracking-widest">
+            <Button type="submit" className="rounded-sm font-mono text-xs uppercase tracking-widest">
               <Mail /> Prepare email
             </Button>
           </DialogFooter>

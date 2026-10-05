@@ -30,7 +30,7 @@ export const Route = createFileRoute("/projects")({
 
 function ProjectsPage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background font-sans text-foreground selection:bg-primary/20 selection:text-foreground">
+    <div className="page-enter relative min-h-screen overflow-x-hidden bg-background font-sans text-foreground selection:bg-primary/20 selection:text-foreground">
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 grid-backdrop opacity-35" />
       </div>
