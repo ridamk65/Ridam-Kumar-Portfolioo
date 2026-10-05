@@ -6,5 +6,5 @@
 - [x] Rename section to Achievements & Leadership, add A03 IEI Treasurer
 - [x] Convert the portfolio to a white professional theme
 - [x] Add and verify a dedicated Projects page
-- [ ] Polish navigation, contact dialog, and page transitions
-- [ ] Add and verify a dedicated Resume page
+- [x] Polish navigation, contact dialog, and page transitions
+- [x] Add and verify a dedicated Resume page
