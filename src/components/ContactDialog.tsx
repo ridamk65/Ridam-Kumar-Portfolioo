@@ -54,13 +54,20 @@ export function ContactDialog() {
 
     if (!result.success) {
       const nextErrors: FieldErrors = {};
+      let firstInvalidField: keyof FormFields | undefined;
       for (const issue of result.error.issues) {
         const field = issue.path[0];
         if (typeof field === "string" && field in inquirySchema.shape) {
-          nextErrors[field as keyof FormFields] = issue.message;
+          const fieldName = field as keyof FormFields;
+          firstInvalidField ??= fieldName;
+          nextErrors[fieldName] = issue.message;
         }
       }
       setErrors(nextErrors);
+      if (firstInvalidField) {
+        const invalidControl = event.currentTarget.elements.namedItem(firstInvalidField);
+        if (invalidControl instanceof HTMLElement) invalidControl.focus();
+      }
       return;
     }
 
@@ -83,7 +90,7 @@ export function ContactDialog() {
       <DialogContent className="max-h-[90vh] max-w-xl overflow-y-auto rounded-sm border-border bg-card p-0 shadow-2xl sm:max-w-2xl">
         <div className="border-b border-border bg-secondary/50 px-6 py-5 sm:px-8">
         <DialogHeader>
-          <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">New inquiry</p>
+          <p className="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-primary">New inquiry</p>
           <DialogTitle className="font-display text-3xl">Let&apos;s build something useful.</DialogTitle>
           <DialogDescription className="pt-2 leading-relaxed">
             Share the role, project, or collaboration you have in mind. Your email app will open with everything ready to send.
@@ -94,8 +101,8 @@ export function ContactDialog() {
         <form className="space-y-5 px-6 py-6 sm:px-8 sm:py-7" onSubmit={handleSubmit} noValidate>
           {fields.map((field) => (
             <div key={field.name}>
-              <label htmlFor={field.name} className="mb-2 block font-mono text-[11px] uppercase tracking-widest text-foreground/80">
-                {field.label}
+              <label htmlFor={field.name} className="mb-2 block font-mono text-[0.8125rem] uppercase tracking-widest text-foreground/80">
+                {field.label} <span aria-hidden="true">*</span>
               </label>
               <input
                 id={field.name}
@@ -103,29 +110,32 @@ export function ContactDialog() {
                 type={field.type}
                 autoComplete={field.autoComplete}
                 maxLength={field.name === "email" ? 255 : field.name === "subject" ? 120 : 80}
+                aria-required="true"
                 aria-invalid={Boolean(errors[field.name])}
                 aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
                 onChange={() => clearError(field.name)}
-                className="h-11 w-full rounded-sm border border-input bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/15"
+                className="h-11 w-full rounded-sm border border-input bg-background px-3 text-sm text-foreground transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring"
               />
-              {errors[field.name] && <p id={`${field.name}-error`} className="mt-1.5 text-xs text-destructive">{errors[field.name]}</p>}
+              {errors[field.name] && <p id={`${field.name}-error`} role="alert" className="mt-1.5 text-xs text-destructive">{errors[field.name]}</p>}
             </div>
           ))}
           <div>
-            <label htmlFor="message" className="mb-2 block font-mono text-[11px] uppercase tracking-widest text-foreground/80">Message</label>
+            <label htmlFor="message" className="mb-2 block font-mono text-[0.8125rem] uppercase tracking-widest text-foreground/80">Message <span aria-hidden="true">*</span></label>
             <textarea
               id="message"
               name="message"
               rows={5}
               maxLength={1500}
+              aria-required="true"
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? "message-error" : undefined}
               onChange={() => clearError("message")}
-              className="w-full resize-y rounded-sm border border-input bg-background px-3 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/15"
+              className="w-full resize-y rounded-sm border border-input bg-background px-3 py-3 text-sm text-foreground transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring"
             />
-            {errors.message && <p id="message-error" className="mt-1.5 text-xs text-destructive">{errors.message}</p>}
+            {errors.message && <p id="message-error" role="alert" className="mt-1.5 text-xs text-destructive">{errors.message}</p>}
           </div>
 
+          <p className="text-xs text-muted-foreground">* required</p>
           <DialogFooter className="gap-3 pt-2 sm:space-x-0">
             <DialogClose asChild>
               <Button type="button" variant="outline" className="rounded-sm font-mono text-xs uppercase tracking-widest">Cancel</Button>

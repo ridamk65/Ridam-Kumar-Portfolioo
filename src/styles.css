@@ -91,7 +91,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.88 0.012 255);
-  --input: oklch(0.82 0.016 255);
+  --input: oklch(0.62 0.02 258);
   --ring: oklch(0.52 0.205 260);
 
   --display: oklch(0.16 0.018 258);
@@ -160,6 +160,11 @@
   }
 }
 
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -193,6 +198,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
