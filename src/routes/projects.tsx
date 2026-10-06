@@ -31,22 +31,25 @@ export const Route = createFileRoute("/projects")({
 function ProjectsPage() {
   return (
     <div className="page-enter relative min-h-screen overflow-x-hidden bg-background font-sans text-foreground selection:bg-primary/20 selection:text-foreground">
+      <a href="#main" className="sr-only focus:not-sr-only fixed left-4 top-4 z-[60] bg-background px-4 py-3 font-mono text-sm text-foreground shadow-lg">
+        Skip to content
+      </a>
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 grid-backdrop opacity-35" />
       </div>
       <PortfolioNav />
 
-      <main className="mx-auto max-w-6xl px-6 pb-24 pt-32">
+      <main id="main" className="mx-auto max-w-6xl px-6 pb-24 pt-32">
         <RevealSection className="mb-20 border-b border-border pb-16">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+            className="inline-flex items-center gap-2 py-2 font-mono text-[0.8125rem] uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
           >
             <ArrowLeft className="size-3.5" /> Home
           </Link>
           <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <p className="mb-5 font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+              <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-primary">
                 Project archive / 03 records
               </p>
               <h1 className="max-w-3xl font-display text-5xl font-black leading-none tracking-tighter md:text-7xl">
@@ -68,10 +71,10 @@ function ProjectsPage() {
             >
               <div className="flex flex-col p-7 md:p-10">
                 <div className="flex items-start justify-between gap-5">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
                     Record {project.id}
                   </span>
-                  <span className="border border-border px-2 py-1 font-mono text-[10px] text-muted-foreground">
+                  <span className="border border-border px-2 py-1 font-mono text-xs text-muted-foreground">
                     {project.year}
                   </span>
                 </div>
@@ -82,7 +85,7 @@ function ProjectsPage() {
                   {project.description}
                 </p>
                 <div className="mt-8 border-l-2 border-primary/50 pl-4">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
+                  <p className="font-mono text-[0.8125rem] uppercase tracking-[0.2em] text-primary">
                     {project.role}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/75">{project.outcome}</p>
@@ -91,7 +94,7 @@ function ProjectsPage() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="border border-border bg-secondary px-3 py-1.5 font-mono text-[10px] text-muted-foreground"
+                      className="border border-border bg-secondary px-3 py-1.5 font-mono text-[0.8125rem] text-muted-foreground"
                     >
                       {tag}
                     </span>
@@ -108,7 +111,7 @@ function ProjectsPage() {
         <RevealSection className="mt-24 border-t border-border pt-12">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">Next step</p>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Next step</p>
               <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">
                 Interested in working together?
               </h2>

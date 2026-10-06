@@ -24,6 +24,9 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="page-enter relative min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-foreground overflow-x-hidden">
+      <a href="#main" className="sr-only focus:not-sr-only fixed left-4 top-4 z-[60] bg-background px-4 py-3 font-mono text-sm text-foreground shadow-lg">
+        Skip to content
+      </a>
       {/* Global background effect */}
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 grid-backdrop opacity-35" />
@@ -32,7 +35,7 @@ function Index() {
       {/* Header Navigation */}
       <PortfolioNav />
 
-      <main className="max-w-6xl mx-auto px-6 pt-32 pb-24">
+      <main id="main" className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section — split layout */}
         <RevealSection className="relative mb-32">
           {/* decorative shapes */}
@@ -87,7 +90,7 @@ function Index() {
                   href="https://github.com/ridamk65"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-foreground/70 hover:text-primary transition-colors border-b border-primary/40 pb-1"
+                  className="border-b border-primary/40 py-2 text-foreground/70 transition-colors hover:text-primary"
                 >
                   GitHub
                 </a>
@@ -95,7 +98,7 @@ function Index() {
                   href="https://www.linkedin.com/in/ridam-kumar-3a96361b8/"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-foreground/70 hover:text-primary transition-colors border-b border-primary/40 pb-1"
+                  className="border-b border-primary/40 py-2 text-foreground/70 transition-colors hover:text-primary"
                 >
                   LinkedIn
                 </a>
@@ -106,7 +109,7 @@ function Index() {
 
         {/* About Section */}
         <RevealSection className="mb-32">
-          <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+          <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-12">
             About
           </h2>
           <p className="max-w-3xl text-2xl md:text-3xl font-display font-medium tracking-tight leading-snug text-pretty">
@@ -120,18 +123,18 @@ function Index() {
 
         {/* Experience */}
         <RevealSection id="experience" className="mb-32 scroll-mt-24">
-          <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+          <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-12">
             Experience
           </h2>
           <ol className="relative border-l border-border pl-8 space-y-12">
             {experience.map((entry) => (
               <li key={entry.title} className="relative">
                 <span className="absolute -left-[2.15rem] top-1.5 size-3 rounded-full bg-primary ring-4 ring-background" />
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                   {entry.period}
                 </p>
                 <h3 className="mt-2 text-xl font-display font-semibold">{entry.title}</h3>
-                <p className="text-sm font-mono text-primary/80">{entry.org}</p>
+                <p className="text-sm font-mono text-primary">{entry.org}</p>
                 <ul className="mt-4 space-y-2 max-w-2xl">
                   {entry.points.map((point) => (
                     <li
@@ -156,7 +159,7 @@ function Index() {
             <h2 className="text-4xl font-display font-bold tracking-tight text-balance">
               Selected Works
             </h2>
-            <span className="font-mono text-[10px] text-muted-foreground uppercase pb-1">
+            <span className="font-mono text-xs text-muted-foreground uppercase pb-1">
               03 Records Total
             </span>
           </div>
@@ -180,7 +183,7 @@ function Index() {
                             {project.description}
                           </p>
                         </div>
-                        <span className="font-mono text-[10px] py-1 px-2 border border-border shrink-0">
+                        <span className="font-mono text-xs py-1 px-2 border border-border shrink-0">
                           {project.year}
                         </span>
                       </div>
@@ -189,14 +192,14 @@ function Index() {
                           {project.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-[10px] font-mono py-1.5 px-3 bg-secondary text-muted-foreground border border-border"
+                              className="text-[0.8125rem] font-mono py-1.5 px-3 bg-secondary text-muted-foreground border border-border"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
                         <div className="h-px flex-1 bg-border hidden md:block" />
-                        <p className="text-xs font-mono text-primary/80 uppercase tracking-widest font-semibold">
+                        <p className="text-[0.8125rem] font-mono text-primary uppercase tracking-widest font-semibold">
                           {project.role} — {project.outcome}
                         </p>
                       </div>
@@ -216,7 +219,7 @@ function Index() {
                         <h3 className="text-2xl font-display font-semibold group-hover:text-primary transition-colors">
                           {project.title}
                         </h3>
-                        <span className="font-mono text-[10px] py-1 px-2 border border-border shrink-0">
+                        <span className="font-mono text-xs py-1 px-2 border border-border shrink-0">
                           {project.year}
                         </span>
                       </div>
@@ -228,13 +231,13 @@ function Index() {
                           {project.tags.slice(0, 5).map((tag) => (
                             <span
                               key={tag}
-                              className="text-[10px] font-mono py-1 px-2 bg-secondary text-muted-foreground border border-border"
+                              className="text-[0.8125rem] font-mono py-1 px-2 bg-secondary text-muted-foreground border border-border"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
-                        <p className="text-[11px] font-mono text-primary/80 uppercase tracking-tighter">
+                        <p className="text-[0.8125rem] font-mono text-primary uppercase tracking-tighter">
                           {project.role} — {project.outcome}
                         </p>
                       </div>
@@ -248,7 +251,7 @@ function Index() {
           <div className="mt-8 flex justify-end">
             <Link
               to="/projects"
-              className="border-b border-primary pb-1 font-mono text-xs uppercase tracking-widest text-primary transition-colors hover:text-foreground"
+              className="border-b border-primary py-2 font-mono text-xs uppercase tracking-widest text-primary transition-colors hover:text-foreground"
             >
               View all project details →
             </Link>
@@ -257,7 +260,7 @@ function Index() {
 
         {/* Skills Section */}
         <RevealSection id="skills" className="mb-32 scroll-mt-24">
-          <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+          <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-12">
             Stack Readout
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
@@ -270,7 +273,7 @@ function Index() {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="text-[11px] font-mono py-1.5 px-3 border border-border text-foreground/90"
+                      className="text-[0.8125rem] font-mono py-1.5 px-3 border border-border text-foreground/90"
                     >
                       {item}
                     </span>
@@ -284,16 +287,16 @@ function Index() {
         {/* Education & Achievements */}
         <RevealSection id="education" className="mb-32 scroll-mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <Reveal>
-            <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+            <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-12">
               Education
             </h2>
             <div className="border border-border p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 {education.period}
               </p>
               <h3 className="mt-3 text-xl font-display font-semibold">{education.degree}</h3>
-              <p className="text-sm font-mono text-primary/80 mt-1">{education.school}</p>
-              <div className="mt-6 flex flex-wrap gap-2 font-mono text-[11px]">
+              <p className="text-sm font-mono text-primary mt-1">{education.school}</p>
+              <div className="mt-6 flex flex-wrap gap-2 font-mono text-[0.8125rem]">
                 <span className="py-1.5 px-3 border border-border">
                   Specialization: {education.specialization}
                 </span>
@@ -302,13 +305,13 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={0.12}>
-            <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-12">
+            <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-12">
               Achievements &amp; Leadership
             </h2>
             <div className="grid grid-cols-1 gap-px bg-border border border-border">
               {achievements.map((item) => (
                 <Reveal key={item.id} className="bg-background p-6 md:p-8">
-                  <span className="font-mono text-[10px] text-primary tracking-[0.2em]">
+                  <span className="font-mono text-xs text-primary tracking-[0.2em]">
                     {item.id}
                   </span>
                   <h3 className="mt-4 text-lg font-display font-semibold">{item.title}</h3>
@@ -327,7 +330,7 @@ function Index() {
         <RevealSection id="contact" className="py-24 scroll-mt-16 border-t border-border">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-6">
+              <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-6">
                 Reach Out
               </h2>
               <p className="font-mono text-sm text-muted-foreground mb-2">$ ~/contact --ridam</p>
@@ -380,7 +383,7 @@ function Index() {
       </main>
 
       <footer className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-6 py-12 flex justify-between items-center text-[10px] font-mono text-muted-foreground uppercase tracking-[0.2em]">
+        <div className="max-w-6xl mx-auto px-6 py-12 flex justify-between items-center text-xs font-mono text-muted-foreground uppercase tracking-[0.2em]">
           <span>© 2024 Ridam Kumar</span>
           <span>Built with precision</span>
         </div>
