@@ -4,17 +4,14 @@ function AgentsVisual() {
   const nodes = ["voice.in", "router", "memory", "response"];
   return (
     <div className="flex h-full flex-col justify-between gap-6 p-5">
-      <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
         <span>friday // agent.pipeline</span>
-        <span className="flex items-center gap-1.5 text-primary">
-          <span className="size-1.5 rounded-full bg-primary animate-pulse" />
-          live
-        </span>
+        <span className="text-primary">illustrative</span>
       </div>
       <div className="flex items-center gap-0">
         {nodes.map((node, i) => (
           <div key={node} className="flex flex-1 items-center last:flex-none">
-            <div className="border border-primary/40 bg-background px-2.5 py-2 font-mono text-[9px] uppercase tracking-wider text-foreground/90">
+            <div className="border border-primary/40 bg-background px-2.5 py-2 font-mono text-xs uppercase tracking-wider text-foreground/90">
               {node}
             </div>
             {i < nodes.length - 1 && (
@@ -23,7 +20,7 @@ function AgentsVisual() {
           </div>
         ))}
       </div>
-      <div className="space-y-2 font-mono text-[9px] text-muted-foreground">
+      <div className="space-y-2 font-mono text-xs text-muted-foreground">
         {[
           ["memory.recall", "38ms"],
           ["router.confidence", "0.94"],
@@ -48,18 +45,15 @@ function LedgerVisual() {
   ];
   return (
     <div className="flex h-full flex-col justify-between gap-4 p-5">
-      <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
         <span>giftchain // donation.ledger</span>
-        <span className="flex items-center gap-1.5 text-primary">
-          <span className="size-1.5 rounded-full bg-primary animate-pulse" />
-          synced
-        </span>
+        <span className="text-primary">illustrative</span>
       </div>
       <div className="space-y-2">
         {rows.map(([block, hash, amt]) => (
           <div
             key={block}
-            className="grid grid-cols-[auto_1fr_auto] items-center gap-3 border border-border/60 bg-background/60 px-3 py-2 font-mono text-[9px]"
+            className="grid grid-cols-[auto_1fr_auto] items-center gap-3 border border-border/60 bg-background/60 px-3 py-2 font-mono text-xs"
           >
             <span className="text-primary">{block}</span>
             <span className="truncate text-muted-foreground">{hash}</span>
@@ -67,7 +61,7 @@ function LedgerVisual() {
           </div>
         ))}
       </div>
-      <p className="font-mono text-[9px] text-muted-foreground">
+      <p className="font-mono text-xs text-muted-foreground">
         tamper-evident · every donation is an on-chain record
       </p>
     </div>
@@ -84,14 +78,14 @@ function AnomalyVisual() {
   ];
   return (
     <div className="flex h-full flex-col justify-between gap-4 p-5">
-      <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
         <span>vexis // shap.explain</span>
         <span className="border border-primary/50 px-1.5 py-0.5 text-primary">flagged</span>
       </div>
       <div className="space-y-2.5">
         {bars.map(([label, value]) => (
           <div key={label} className="space-y-1">
-            <div className="flex justify-between font-mono text-[9px] text-muted-foreground">
+            <div className="flex justify-between font-mono text-xs text-muted-foreground">
               <span>{label}</span>
               <span className="text-foreground/80">{(Number(value) / 100).toFixed(2)}</span>
             </div>
@@ -104,7 +98,7 @@ function AnomalyVisual() {
           </div>
         ))}
       </div>
-      <p className="font-mono text-[9px] text-muted-foreground">
+      <p className="font-mono text-xs text-muted-foreground">
         node 0xV7 flagged — feature attribution via TreeSHAP
       </p>
     </div>
@@ -113,7 +107,7 @@ function AnomalyVisual() {
 
 export function ProjectVisual({ kind }: { kind: VisualKind }) {
   return (
-    <div className="relative h-full min-h-[220px] w-full overflow-hidden border border-border bg-secondary/30">
+    <div aria-hidden="true" className="relative h-full min-h-[220px] w-full overflow-hidden border border-border bg-secondary/30">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(circle_at_1px_1px,hsl(var(--border))_1px,transparent_0)] [background-size:18px_18px]"
