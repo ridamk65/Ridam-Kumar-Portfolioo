@@ -8,3 +8,4 @@
 - [x] Add and verify a dedicated Projects page
 - [x] Polish navigation, contact dialog, and page transitions
 - [x] Add and verify a dedicated Resume page
+- [x] Fix error-page typing and apply requested background, accessibility, and professional-content edits; confirm clean build without browser checks

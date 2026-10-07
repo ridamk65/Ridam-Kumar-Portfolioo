@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -34,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -77,11 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ridam Kumar | Blockchain & AWS Architect Developer" },
-      { name: "description", content: "Portfolio of Ridam Kumar — blockchain and AWS architect developer building secure smart contracts, decentralized applications, and scalable cloud-native systems." },
+      { title: "Ridam Kumar | Blockchain & Cloud Developer" },
+      { name: "description", content: "Portfolio of Ridam Kumar — final-year CSE student building blockchain systems, decentralized applications and cloud-native projects." },
       { name: "author", content: "Ridam Kumar" },
-      { property: "og:title", content: "Ridam Kumar | Blockchain & AWS Architect Developer" },
-      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain and AWS architect developer building secure smart contracts, decentralized applications, and scalable cloud-native systems." },
+      { property: "og:title", content: "Ridam Kumar | Blockchain & Cloud Developer" },
+      { property: "og:description", content: "Portfolio of Ridam Kumar — final-year CSE student building blockchain systems, decentralized applications and cloud-native projects." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@RidamKumar" },

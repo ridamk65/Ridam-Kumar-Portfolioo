@@ -59,8 +59,8 @@ function ResumePage() {
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">{entry.period}</p>
                 <h3 className="mt-3 font-display text-2xl font-semibold">{entry.title}</h3>
                 <p className="mt-1 font-mono text-xs text-primary">{entry.org}</p>
-                <ul className="mt-6 space-y-3">
-                  {entry.points.map((point) => <li key={point} className="text-sm leading-relaxed text-muted-foreground">— {point}</li>)}
+                <ul role="list" className="mt-6 space-y-3">
+                  {entry.points.map((point) => <li key={point} className="text-sm leading-relaxed text-muted-foreground before:content-['—'] before:mr-2">{point}</li>)}
                 </ul>
               </Reveal>
             ))}

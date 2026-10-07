@@ -1,6 +1,6 @@
 export const skillGroups = [
   { title: "Languages", items: ["Python", "SQL", "Java", "Solidity"] },
-  { title: "Blockchain", items: ["Hardhat", "Hyperledger Fabric", "Ethereum MainNet", "Smart Contracts"] },
+  { title: "Blockchain", items: ["Hardhat", "Hyperledger Fabric", "Ethereum / EVM", "Smart Contracts"] },
   { title: "Cloud & Backend", items: ["AWS S3", "EC2", "IAM", "CloudFront", "Route 53", "Node.js", "Express.js"] },
   { title: "Tools & Core CS", items: ["NS3", "SUMO", "Matplotlib", "Git", "Postman", "DBMS", "OS", "OOPS"] },
 ];
