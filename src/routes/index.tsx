@@ -10,10 +10,10 @@ import { achievements, education, experience, skillGroups } from "@/lib/resume";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ridam Kumar | Blockchain & AWS Architect Developer" },
-      { name: "description", content: "Portfolio of Ridam Kumar — blockchain and AWS architect developer building secure smart contracts, decentralized applications, and scalable cloud-native systems." },
-      { property: "og:title", content: "Ridam Kumar | Blockchain & AWS Architect Developer" },
-      { property: "og:description", content: "Portfolio of Ridam Kumar — blockchain and AWS architect developer building secure smart contracts, decentralized applications, and scalable cloud-native systems." },
+      { title: "Ridam Kumar | Blockchain & Cloud Developer" },
+      { name: "description", content: "Portfolio of Ridam Kumar — final-year CSE student building blockchain systems, decentralized applications and cloud-native projects." },
+      { property: "og:title", content: "Ridam Kumar | Blockchain & Cloud Developer" },
+      { property: "og:description", content: "Portfolio of Ridam Kumar — final-year CSE student building blockchain systems, decentralized applications and cloud-native projects." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -38,14 +38,6 @@ function Index() {
       <main id="main" className="max-w-6xl mx-auto px-6 pt-32 pb-24">
         {/* Hero Section — split layout */}
         <RevealSection className="relative mb-32">
-          {/* decorative shapes */}
-          <div aria-hidden className="pointer-events-none absolute inset-0">
-            <div className="absolute right-10 -top-10 size-24 rounded-full border-2 border-primary/60 animate-float-slow" />
-            <div className="absolute right-4 -top-16 size-6 rounded-full border-2 border-primary" />
-            <div className="absolute right-40 top-24 size-4 rounded-full bg-primary/80 animate-drift" />
-            <div className="absolute left-[-2rem] top-1/2 size-3 rounded-full bg-foreground/30 animate-float-slow" />
-          </div>
-
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left: identity */}
             <Reveal className="lg:col-span-4" delay={0.05}>
@@ -55,7 +47,7 @@ function Index() {
                 I&apos;m <span className="text-primary">Ridam</span>
               </h1>
               <p className="mt-6 text-xl md:text-2xl font-light text-muted-foreground">
-                Blockchain &amp; AWS Architect Developer
+                Final-year CSE Student · Blockchain &amp; Cloud Developer
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <ContactDialog />
@@ -76,14 +68,13 @@ function Index() {
             {/* Right: statement */}
             <Reveal className="lg:col-span-4 lg:pl-10 lg:border-l border-border" delay={0.22}>
               <p className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-5">
-                Expert on
+                Focus areas
               </p>
               <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight leading-snug text-pretty">
-                Based in India — I build blockchain systems and cloud-native architectures.
+                Final-year CSE student in India building blockchain systems and cloud-native applications.
               </h2>
               <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-md text-pretty">
-                From audited smart contracts and decentralized applications to explainable ML and
-                AWS-backed infrastructure, I turn complex ideas into production-ready products.
+                From smart contracts and decentralized applications to explainable ML and AWS-backed infrastructure, I turn complex ideas into working products.
               </p>
               <div className="mt-8 flex gap-6 font-mono text-xs uppercase tracking-widest">
                 <a
@@ -92,7 +83,7 @@ function Index() {
                   rel="noreferrer"
                   className="border-b border-primary/40 py-2 text-foreground/70 transition-colors hover:text-primary"
                 >
-                  GitHub
+                  GitHub<span className="sr-only"> (opens in new tab)</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ridam-kumar-3a96361b8/"
@@ -100,7 +91,7 @@ function Index() {
                   rel="noreferrer"
                   className="border-b border-primary/40 py-2 text-foreground/70 transition-colors hover:text-primary"
                 >
-                  LinkedIn
+                  LinkedIn<span className="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
             </Reveal>
@@ -126,16 +117,16 @@ function Index() {
           <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-12">
             Experience
           </h2>
-          <ol className="relative border-l border-border pl-8 space-y-12">
+          <ol role="list" className="relative border-l border-border pl-8 space-y-12">
             {experience.map((entry) => (
               <li key={entry.title} className="relative">
-                <span className="absolute -left-[2.15rem] top-1.5 size-3 rounded-full bg-primary ring-4 ring-background" />
+                <span aria-hidden="true" className="absolute -left-[2.15rem] top-1.5 size-3 rounded-full bg-primary ring-4 ring-background" />
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                   {entry.period}
                 </p>
                 <h3 className="mt-2 text-xl font-display font-semibold">{entry.title}</h3>
                 <p className="text-sm font-mono text-primary">{entry.org}</p>
-                <ul className="mt-4 space-y-2 max-w-2xl">
+                <ul role="list" className="mt-4 space-y-2 max-w-2xl">
                   {entry.points.map((point) => (
                     <li
                       key={point}
@@ -253,7 +244,7 @@ function Index() {
               to="/projects"
               className="border-b border-primary py-2 font-mono text-xs uppercase tracking-widest text-primary transition-colors hover:text-foreground"
             >
-              View all project details →
+              View all project details <span aria-hidden="true">→</span>
             </Link>
           </div>
         </RevealSection>
@@ -266,9 +257,9 @@ function Index() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {skillGroups.map((group, index) => (
               <Reveal key={group.title} className="bg-background p-6 md:p-8" delay={index * 0.07}>
-                <h4 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6">
                   {group.title}
-                </h4>
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <span
@@ -333,22 +324,16 @@ function Index() {
               <h2 className="text-xs font-mono text-primary uppercase tracking-[0.3em] mb-6">
                 Reach Out
               </h2>
-              <p className="font-mono text-sm text-muted-foreground mb-2">$ ~/contact --ridam</p>
+              <p aria-hidden="true" className="font-mono text-sm text-muted-foreground mb-2">$ ~/contact --ridam</p>
               <p className="text-muted-foreground max-w-md mb-8">
                 open to: software engineering & Web3 / blockchain roles
               </p>
               <div className="space-y-2 font-mono text-sm">
                 <a
                   href="mailto:kumarridam172@gmail.com"
-                  className="block text-foreground/80 hover:text-primary transition-colors"
+                  className="block text-foreground/80 underline hover:text-primary transition-colors"
                 >
                   email: kumarridam172@gmail.com
-                </a>
-                <a
-                  href="tel:+916207422455"
-                  className="block text-foreground/80 hover:text-primary transition-colors"
-                >
-                  phone: +91 62074 22455
                 </a>
                 <p className="text-muted-foreground">location: Chennai, Tamil Nadu, India</p>
               </div>
@@ -357,6 +342,7 @@ function Index() {
             <div className="flex flex-wrap gap-3 md:justify-end">
               <a
                 href="mailto:kumarridam172@gmail.com"
+                aria-label="Email Ridam"
                 className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-primary/90"
               >
                 Email
@@ -367,7 +353,7 @@ function Index() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary hover:text-foreground"
               >
-                GitHub
+                GitHub<span className="sr-only"> (opens in new tab)</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/ridam-kumar-3a96361b8/"
@@ -375,7 +361,7 @@ function Index() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-border font-mono text-xs uppercase tracking-[0.15em] transition-colors hover:bg-secondary hover:text-foreground"
               >
-                LinkedIn
+                LinkedIn<span className="sr-only"> (opens in new tab)</span>
               </a>
             </div>
           </div>
@@ -384,8 +370,7 @@ function Index() {
 
       <footer className="border-t border-border">
         <div className="max-w-6xl mx-auto px-6 py-12 flex justify-between items-center text-xs font-mono text-muted-foreground uppercase tracking-[0.2em]">
-          <span>© 2024 Ridam Kumar</span>
-          <span>Built with precision</span>
+          <span>© {new Date().getFullYear()} Ridam Kumar</span>
         </div>
       </footer>
     </div>

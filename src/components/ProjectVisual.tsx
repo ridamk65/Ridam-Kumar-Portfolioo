@@ -110,7 +110,7 @@ export function ProjectVisual({ kind }: { kind: VisualKind }) {
     <div aria-hidden="true" className="relative h-full min-h-[220px] w-full overflow-hidden border border-border bg-secondary/30">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(circle_at_1px_1px,hsl(var(--border))_1px,transparent_0)] [background-size:18px_18px]"
+        className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(circle_at_1px_1px,var(--border)_1px,transparent_0)] [background-size:18px_18px]"
       />
       <div aria-hidden className="pointer-events-none absolute -top-10 right-0 size-32 rounded-full bg-primary/10 blur-3xl" />
       <div className="relative h-full">

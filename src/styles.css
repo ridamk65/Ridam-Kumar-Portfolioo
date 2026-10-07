@@ -239,35 +239,6 @@ body {
   }
 }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(0, -24px, 0);
-  }
-}
-
-@keyframes drift {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  33% {
-    transform: translate3d(18px, -14px, 0) scale(1.05);
-  }
-  66% {
-    transform: translate3d(-14px, 12px, 0) scale(0.96);
-  }
-}
-
-@utility animate-float-slow {
-  animation: float-slow 9s infinite ease-in-out;
-}
-
-@utility animate-drift {
-  animation: drift 16s infinite ease-in-out;
-}
-
 @utility grid-backdrop {
   background-image:
     linear-gradient(to right, color-mix(in oklab, var(--border) 60%, transparent) 1px, transparent 1px),
